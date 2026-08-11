@@ -6,11 +6,23 @@
 <title>Casa Cali — Stay. Relax. Experience Banyuwangi.</title>
 <meta name="description" content="Rumah sewa satu keluarga di Banyuwangi. Tiga kamar, dapur lengkap, pojok anak, dan teras berlampu. Stay. Relax. Experience Banyuwangi.">
 <meta name="theme-color" content="#F7F1E7">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://casacali.id/">
+<link rel="icon" href="img/logo.jpg">
+<link rel="apple-touch-icon" href="img/logo.jpg">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="Casa Cali">
+<meta property="og:url" content="https://casacali.id/">
 <meta property="og:title" content="Casa Cali — Stay. Relax. Experience Banyuwangi.">
 <meta property="og:description" content="Rumah sewa satu keluarga di Banyuwangi. Tiga kamar, dapur lengkap, pojok anak, dan teras berlampu.">
-<meta property="og:image" content="img/fasad-senja.jpg">
+<meta property="og:image" content="https://casacali.id/img/fasad-senja.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casa Cali — Stay. Relax. Experience Banyuwangi.">
+<meta name="twitter:description" content="Rumah sewa satu keluarga di Banyuwangi. Tiga kamar, dapur lengkap, pojok anak, dan teras berlampu.">
+<meta name="twitter:image" content="https://casacali.id/img/fasad-senja.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LodgingBusiness","name":"Casa Cali",
 "slogan":"Stay. Relax. Experience Banyuwangi.",
@@ -29,7 +41,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@200;300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════════════════
    CASA CALI — Banyuwangi
@@ -47,9 +59,10 @@
   --sh2:0 2px 8px rgba(70,60,40,.07),0 44px 80px -44px rgba(70,60,40,.5);
   --rail:58px; --pad:clamp(20px,5vw,72px); --maxw:1280px; --band:clamp(70px,9vw,140px);
   --arch:50% 50% 6px 6px / 26% 26% 2% 2%;
-  --d:'Playfair Display',Georgia,serif;
-  --s:'Poppins',system-ui,sans-serif;
-  --k:'Parisienne',cursive;
+  --d:'Plus Jakarta Sans',system-ui,sans-serif;
+  --s:'Plus Jakarta Sans',system-ui,sans-serif;
+  --k:'Plus Jakarta Sans',system-ui,sans-serif;
+  --logo:'Playfair Display',Georgia,serif;
 }
 [data-mode="malam"]{
   --krem:#191E15; --krem2:#1F2519; --panel:#252C1E; --sunk:#141810;
@@ -75,7 +88,7 @@ section[id]{scroll-margin-top:20px}
 .d1{font-family:var(--d);font-weight:400;font-size:clamp(44px,7.6vw,104px);line-height:1.03;letter-spacing:-.015em;margin:0}
 .d2{font-family:var(--d);font-weight:400;font-size:clamp(31px,4.4vw,58px);line-height:1.1;letter-spacing:-.01em;margin:0}
 .d3{font-family:var(--d);font-weight:400;font-size:clamp(23px,2.6vw,34px);line-height:1.18;margin:0}
-.sk{font-family:var(--k);font-size:clamp(24px,3vw,38px);color:var(--tembaga);line-height:1.2;font-weight:400}
+.sk{font-family:var(--k);font-style:italic;font-size:clamp(20px,2.4vw,30px);color:var(--tembaga);line-height:1.2;font-weight:400}
 .lab{font-family:var(--s);font-size:10.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--daun)}
 .body{font-size:16px;line-height:1.78;color:var(--ink2);max-width:62ch;font-weight:300}
 .body strong{color:var(--ink);font-weight:500}
@@ -85,11 +98,6 @@ section[id]{scroll-margin-top:20px}
 .band{padding-block:var(--band);position:relative}
 .band--sunk{background:var(--krem2);transition:background .6s ease}
 
-/* penanda lengkung */
-.archmark{width:26px;height:32px;border-radius:var(--arch);border:1.4px solid var(--tembaga);
-  display:inline-block;position:relative;flex:0 0 auto}
-.archmark::after{content:"";position:absolute;left:50%;bottom:5px;width:5px;height:5px;border-radius:50%;
-  background:var(--tembaga);transform:translateX(-50%)}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin-bottom:46px}
 .sh .eyeb{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .sh h2{max-width:17ch}
@@ -102,7 +110,7 @@ section[id]{scroll-margin-top:20px}
   border-right:1px solid var(--line2);display:flex;flex-direction:column;align-items:center;
   padding:18px 0 16px;gap:14px;transition:background .6s ease}
 .rail .lg{width:30px;height:30px;flex:0 0 auto}
-.rail .vt{writing-mode:vertical-rl;font-family:var(--d);font-size:13px;letter-spacing:.32em;
+.rail .vt{writing-mode:vertical-rl;font-family:var(--logo);font-size:13px;letter-spacing:.32em;
   color:var(--zaitun2);flex:1;display:flex;align-items:center;text-transform:uppercase}
 .sct{display:flex;flex-direction:column;gap:9px;align-items:center}
 .sct a{width:5px;height:5px;border-radius:50%;background:var(--line);transition:.25s}
@@ -137,7 +145,7 @@ section[id]{scroll-margin-top:20px}
 .hero-top{position:relative;z-index:3;padding:20px var(--pad);display:flex;
   align-items:center;justify-content:space-between;gap:14px 20px;flex-wrap:wrap;flex:0 0 auto}
 .brand{display:flex;align-items:center;gap:12px}
-.brand .bn{font-family:var(--d);font-size:22px;letter-spacing:.02em;color:#FBF5EA;line-height:1}
+.brand .bn{font-family:var(--logo);font-size:23px;letter-spacing:.01em;color:#FBF5EA;line-height:1}
 .brand small{display:block;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.7;
   margin-top:5px;font-weight:300;white-space:nowrap}
 @media(max-width:460px){.brand small{display:none}}
@@ -162,7 +170,7 @@ section[id]{scroll-margin-top:20px}
 .price small{font-size:11.5px;color:rgba(251,245,234,.7)}
 @media(max-width:720px){.price{text-align:left}}
 .check{margin-top:30px;display:grid;grid-template-columns:1fr 1fr .9fr auto;gap:1px;
-  background:rgba(251,245,234,.2);border:1px solid rgba(251,245,234,.24);border-radius:4px;overflow:hidden;
+  background:rgba(251,245,234,.2);border:1px solid rgba(251,245,234,.24);border-radius:18px;overflow:hidden;
   backdrop-filter:blur(18px);max-width:840px}
 .check .f{background:rgba(20,24,16,.5);padding:12px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .check label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,245,234,.62);font-weight:400}
@@ -172,7 +180,7 @@ section[id]{scroll-margin-top:20px}
 .check .go{border:0;background:var(--tembaga);color:#FFF6EA;font-weight:500;font-size:14px;padding:0 30px;
   cursor:pointer;transition:.2s;white-space:nowrap}
 .check .go:hover{background:var(--tembaga2)}
-@media(max-width:820px){.check{grid-template-columns:1fr 1fr}.check .go{grid-column:1/-1;padding:16px}}
+@media(max-width:820px){.check{grid-template-columns:1fr 1fr}.check .f:nth-child(3){grid-column:1/-1}.check .go{grid-column:1/-1;padding:16px}}
 .cmsg{margin:13px 0 0;font-size:12.5px;color:var(--tembaga2);min-height:19px}
 .hero-foot{position:relative;z-index:2;border-top:1px solid rgba(251,245,234,.18);margin-top:24px}
 .hero-foot .in{max-width:calc(var(--maxw) + var(--pad)*2);margin:0 auto;padding:13px var(--pad);
@@ -240,14 +248,16 @@ section[id]{scroll-margin-top:20px}
   border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;border-radius:30px;transition:.22s;font-weight:400}
 .filters button:hover{color:var(--zaitun);border-color:var(--daun)}
 .filters button[aria-pressed="true"]{background:var(--zaitun);color:var(--krem);border-color:var(--zaitun)}
-.masonry{columns:4;column-gap:14px}
-@media(max-width:1100px){.masonry{columns:3}}
-@media(max-width:760px){.masonry{columns:2;column-gap:10px}}
-@media(max-width:430px){.masonry{columns:1}}
-.mi{break-inside:avoid;margin-bottom:14px;position:relative;overflow:hidden;background:var(--sunk);
-  cursor:zoom-in;border-radius:6px;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s cubic-bezier(.2,.7,.3,1)}
+.masonry{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media(min-width:1580px){.masonry{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:1100px){.masonry{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.masonry{grid-template-columns:repeat(2,1fr);gap:5px}}
+@media(max-width:430px){.masonry{grid-template-columns:1fr}}
+#galeri .wrap{max-width:1560px}
+.mi{position:relative;overflow:hidden;background:var(--sunk);aspect-ratio:1/1;
+  cursor:zoom-in;border-radius:16px;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s cubic-bezier(.2,.7,.3,1)}
 .mi.show{opacity:1;transform:none}
-.mi img{width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.3,1)}
+.mi img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.3,1)}
 .mi:hover img{transform:scale(1.06)}
 .mi figcaption{position:absolute;left:0;right:0;bottom:0;padding:32px 14px 12px;color:#FBF5EA;font-size:12.5px;
   opacity:0;transform:translateY(8px);transition:.4s;background:linear-gradient(180deg,transparent,rgba(20,24,16,.86));font-weight:300}
@@ -262,25 +272,7 @@ section[id]{scroll-margin-top:20px}
 /* tur */
 .tourgrid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(20px,3vw,42px);align-items:start}
 @media(max-width:980px){.tourgrid{grid-template-columns:1fr}}
-.pano{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--sunk);cursor:grab;
-  border:1px solid var(--line);border-radius:6px;touch-action:pan-y}
-.pano.drag{cursor:grabbing}
-.pano .sphere{position:absolute;inset:0;background-repeat:no-repeat;background-size:auto 118%;background-position-y:center}
-.pano .vig{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 120px 24px rgba(20,24,16,.36)}
-.pano .hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-size:10px;letter-spacing:.16em;
-  text-transform:uppercase;color:#FBF5EA;background:rgba(20,24,16,.55);padding:8px 15px;border-radius:30px;
-  backdrop-filter:blur(8px);display:flex;gap:8px;align-items:center;transition:opacity .4s;pointer-events:none}
-.pano.moved .hint{opacity:0}
-.pano .hs{position:absolute;width:28px;height:28px;transform:translate(-50%,-50%);border-radius:50%;border:0;
-  cursor:pointer;background:rgba(251,245,234,.94);display:grid;place-items:center;padding:0;
-  font-size:11.5px;color:var(--zaitun);font-weight:500;animation:pulse 2.8s ease-out infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,245,234,.5)}70%{box-shadow:0 0 0 15px rgba(251,245,234,0)}100%{box-shadow:0 0 0 0 rgba(251,245,234,0)}}
-.roomtabs{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
-.roomtabs button{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;
-  border:1px solid var(--line);background:none;color:var(--mute);cursor:pointer;border-radius:30px;transition:.2s}
-.roomtabs button[aria-pressed="true"]{background:var(--zaitun);color:var(--krem);border-color:var(--zaitun)}
-.roomtabs button:hover{color:var(--zaitun);border-color:var(--daun)}
-.fpwrap{background:var(--panel);border:1px solid var(--line);padding:20px;border-radius:6px;transition:background .6s ease}
+.fpwrap{background:var(--panel);border:1px solid var(--line);padding:20px;border-radius:16px;transition:background .6s ease}
 .fp svg{width:100%;height:auto}
 .fp .rm{fill:var(--krem2);stroke:var(--line);stroke-width:1.4;cursor:pointer;transition:fill .25s}
 .fp .rm:hover{fill:var(--sunk)}
@@ -292,7 +284,7 @@ section[id]{scroll-margin-top:20px}
 .fpinfo p{margin:8px 0 0;font-size:14px;color:var(--mute);line-height:1.6}
 .fpinfo .mt{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .fpinfo .mt span{font-size:11px;color:var(--ink2);border:1px solid var(--line);padding:4px 10px;border-radius:20px}
-.vwrap{position:relative;background:#141810;border:1px solid var(--line);border-radius:6px;overflow:hidden;aspect-ratio:16/9}
+.vwrap{position:relative;background:#141810;border:1px solid var(--line);border-radius:16px;overflow:hidden;aspect-ratio:16/9}
 .vwrap video{width:100%;height:100%;object-fit:cover}
 .vfall{position:absolute;inset:0;background-size:cover;background-position:center;display:grid;place-items:center;cursor:pointer}
 .vfall::before{content:"";position:absolute;inset:0;background:rgba(20,24,16,.5)}
@@ -301,7 +293,7 @@ section[id]{scroll-margin-top:20px}
   place-items:center;background:rgba(20,24,16,.35);backdrop-filter:blur(6px)}
 .vfall .cap{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
 .vfall .sub{font-size:12.5px;opacity:.74;max-width:36ch;line-height:1.55;font-weight:300}
-.ba{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);border-radius:6px;
+.ba{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);border-radius:16px;
   user-select:none;touch-action:pan-y;background:var(--sunk)}
 .ba .l,.ba .r{position:absolute;inset:0;background-size:cover;background-position:center}
 .ba .r{clip-path:inset(0 0 0 var(--sp,50%))}
@@ -313,21 +305,6 @@ section[id]{scroll-margin-top:20px}
   background:rgba(20,24,16,.6);color:#FBF5EA;border-radius:30px;backdrop-filter:blur(8px)}
 .ba .tag.a{left:14px}.ba .tag.b{right:14px}
 
-/* hotspot */
-.hot{position:relative;overflow:hidden;border-radius:6px;background:var(--sunk);aspect-ratio:4/3}
-.hot img{width:100%;height:100%;object-fit:cover}
-.hot .hp{position:absolute;width:30px;height:30px;transform:translate(-50%,-50%);border-radius:50%;
-  border:1px solid rgba(251,245,234,.72);background:rgba(20,24,16,.44);backdrop-filter:blur(6px);cursor:pointer;
-  display:grid;place-items:center;color:#FBF5EA;padding:0;transition:.25s;font-size:12px}
-.hot .hp::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(251,245,234,.3);
-  animation:pulse2 3s ease-out infinite}
-@keyframes pulse2{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.4);opacity:0}}
-.hot .hp:hover,.hot .hp.on{background:var(--tembaga);color:#FFF6EA;border-color:var(--tembaga);transform:translate(-50%,-50%) scale(1.15)}
-.hotinfo{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:6px;min-height:160px;transition:background .6s ease}
-.hotinfo .lab{display:block;margin-bottom:9px}
-.hotinfo h4{margin:0;font-family:var(--d);font-size:25px;font-weight:400}
-.hotinfo p{margin:10px 0 0;color:var(--ink2);font-size:15px;line-height:1.68}
-.hotinfo .meta{margin-top:15px;padding-top:15px;border-top:1px solid var(--line2);font-size:11.5px;color:var(--mute);letter-spacing:.04em}
 .inc{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--line2);border:1px solid var(--line2)}
 .inc button{background:var(--krem);border:0;padding:20px 17px;text-align:left;cursor:pointer;display:flex;
   flex-direction:column;gap:10px;transition:background .3s;min-height:120px}
@@ -346,7 +323,7 @@ section[id]{scroll-margin-top:20px}
 .rhead{display:grid;grid-template-columns:112px 1fr auto auto;gap:22px;align-items:center;padding:18px 20px;
   cursor:pointer;width:100%;border:0;background:none;text-align:left}
 @media(max-width:780px){.rhead{grid-template-columns:74px 1fr auto;gap:14px;padding:15px}}
-.rhead .thumb{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:4px;background-color:var(--sunk)}
+.rhead .thumb{aspect-ratio:4/3;background-size:cover;background-position:center;border-radius:10px;background-color:var(--sunk)}
 .rhead h3{margin:0;font-family:var(--d);font-size:clamp(20px,2.2vw,28px);font-weight:400;line-height:1.15}
 .rhead .rsum{font-size:12px;color:var(--mute);margin-top:6px;line-height:1.5}
 .rhead .rprice{text-align:right;white-space:nowrap}
@@ -369,11 +346,11 @@ section[id]{scroll-margin-top:20px}
 .rdet h5{margin:0 0 7px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--daun);font-weight:500}
 .rdet p{margin:0 0 17px;font-size:14.5px;color:var(--ink2);line-height:1.7}
 .rgal{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px}
-.rgal div{aspect-ratio:1;background-size:cover;background-position:center;border-radius:4px;cursor:zoom-in;background-color:var(--sunk)}
+.rgal div{aspect-ratio:1;background-size:cover;background-position:center;border-radius:10px;cursor:zoom-in;background-color:var(--sunk)}
 .rgal div:hover{opacity:.85}
 .ract{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--zaitun);
-  background:var(--zaitun);color:var(--krem);font-size:13.5px;font-weight:500;cursor:pointer;border-radius:3px;transition:.22s}
+  background:var(--zaitun);color:var(--krem);font-size:13.5px;font-weight:500;cursor:pointer;border-radius:40px;transition:.22s}
 .btn:hover{background:var(--tembaga);border-color:var(--tembaga);color:#FFF6EA}
 .btn.ghost{background:none;color:var(--zaitun);border-color:var(--line)}
 .btn.ghost:hover{border-color:var(--zaitun);background:var(--zaitun);color:var(--krem)}
@@ -413,7 +390,7 @@ section[id]{scroll-margin-top:20px}
 /* peta */
 .mapgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
 @media(max-width:980px){.mapgrid{grid-template-columns:1fr}}
-.mapbox{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:background .6s}
+.mapbox{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:background .6s}
 .mapbox svg{width:100%;height:auto;display:block;touch-action:none;cursor:grab}
 .mapbox svg.drag{cursor:grabbing}
 .mapbox .sea{fill:#CBDCDC}
@@ -430,11 +407,10 @@ section[id]{scroll-margin-top:20px}
 .pin:hover text,.pin.on text{fill:var(--ink);font-weight:500}
 .pin.dim{opacity:.18}
 .home circle{fill:var(--tembaga);stroke:var(--panel);stroke-width:2.4}
-.home .ring{fill:none;stroke:var(--tembaga);stroke-width:1.2;opacity:.5;animation:ripple 3.2s ease-out infinite}
-@keyframes ripple{0%{r:11;opacity:.55}100%{r:30;opacity:0}}
+.home .ring{fill:none;stroke:var(--tembaga);stroke-width:1.2;opacity:.35}
 .mapctl{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px}
 .mapctl button{width:32px;height:32px;border:1px solid var(--line);background:var(--panel);color:var(--ink2);
-  cursor:pointer;border-radius:3px;font-size:15px;display:grid;place-items:center;transition:.2s}
+  cursor:pointer;border-radius:8px;font-size:15px;display:grid;place-items:center;transition:.2s}
 .mapctl button:hover{background:var(--zaitun);color:var(--krem);border-color:var(--zaitun)}
 .nlist{display:flex;flex-direction:column;gap:1px;background:var(--line2);border:1px solid var(--line2);max-height:600px;overflow-y:auto}
 .nrow{background:var(--krem);padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;
@@ -447,7 +423,7 @@ section[id]{scroll-margin-top:20px}
 .nrow .tt b{font-size:13.5px;font-weight:500}
 .nrow .tt span{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase}
 .guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px}
-.gcard{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel);cursor:zoom-in;transition:.3s}
+.gcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);cursor:zoom-in;transition:.3s}
 .gcard:hover{box-shadow:var(--sh);transform:translateY(-3px)}
 .gcard .im{aspect-ratio:3/4;background-size:cover;background-position:top center;background-color:var(--sunk)}
 .gcard .gc{padding:14px 16px;border-top:1px solid var(--line2)}
@@ -458,7 +434,7 @@ section[id]{scroll-margin-top:20px}
 .life{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:980px){.life{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.life{grid-template-columns:1fr}}
-.lc{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:var(--sunk);
+.lc{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:16px;background:var(--sunk);
   display:flex;flex-direction:column;justify-content:flex-end;color:#FBF5EA;isolation:isolate}
 .lc.wide{grid-column:span 2;aspect-ratio:16/10}
 @media(max-width:600px){.lc.wide{grid-column:span 1;aspect-ratio:4/5}}
@@ -479,7 +455,7 @@ section[id]{scroll-margin-top:20px}
 /* tamu */
 .gg{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3vw,42px);align-items:start}
 @media(max-width:980px){.gg{grid-template-columns:1fr}}
-.embed{border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow:hidden;transition:background .6s}
+.embed{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden;transition:background .6s}
 .embed .eh{display:flex;align-items:center;gap:11px;padding:14px 18px;border-bottom:1px solid var(--line2)}
 .embed .eh .logo{width:26px;height:26px;display:grid;place-items:center;flex:0 0 auto}
 .embed .eh b{font-size:14px;font-weight:500}
@@ -509,7 +485,7 @@ section[id]{scroll-margin-top:20px}
 .words span:hover{border-color:var(--tembaga);color:var(--ink)}
 .words span i{font-size:10.5px;color:var(--mute);font-style:normal}
 .ugc{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.ugc div{aspect-ratio:1;background-size:cover;background-position:center;cursor:zoom-in;border-radius:4px;
+.ugc div{aspect-ratio:1;background-size:cover;background-position:center;cursor:zoom-in;border-radius:10px;
   background-color:var(--sunk);transition:.3s}
 .ugc div:hover{opacity:.85}
 .vt{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
@@ -553,13 +529,13 @@ section[id]{scroll-margin-top:20px}
 .calh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px}
 .calh h4{margin:0;font-family:var(--d);font-size:23px;font-weight:400}
 .calnav{display:flex;gap:6px}
-.calnav button{width:34px;height:34px;border:1px solid var(--line);background:none;cursor:pointer;border-radius:3px;
+.calnav button{width:34px;height:34px;border:1px solid var(--line);background:none;cursor:pointer;border-radius:8px;
   color:var(--ink2);transition:.2s;display:grid;place-items:center}
 .calnav button:hover{background:var(--zaitun);color:var(--krem);border-color:var(--zaitun)}
 .cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
 .cgrid .dw{font-size:9.5px;text-align:center;color:var(--mute);padding-bottom:7px;letter-spacing:.1em}
 .cd{aspect-ratio:1;border:1px solid transparent;background:none;cursor:pointer;font-size:12.5px;color:var(--ink);
-  border-radius:3px;position:relative;transition:.16s;display:grid;place-items:center;padding:0}
+  border-radius:8px;position:relative;transition:.16s;display:grid;place-items:center;padding:0}
 .cd:hover:not(:disabled){border-color:var(--daun)}
 .cd:disabled{color:var(--line);cursor:not-allowed}
 .cd.full{color:var(--mute);text-decoration:line-through;cursor:not-allowed;background:var(--sunk)}
@@ -572,10 +548,10 @@ section[id]{scroll-margin-top:20px}
 .legend i{width:9px;height:9px;border:1px solid var(--line);border-radius:2px;display:block}
 .fld{margin-bottom:14px}
 .fld label{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--daun);margin-bottom:6px;font-weight:500}
-.fld select,.fld input{width:100%;padding:11px 13px;border:1px solid var(--line);background:var(--panel);border-radius:3px;
+.fld select,.fld input{width:100%;padding:11px 13px;border:1px solid var(--line);background:var(--panel);border-radius:10px;
   font-size:14.5px;color:var(--ink);transition:border-color .2s}
 .fld select:focus,.fld input:focus{border-color:var(--tembaga);outline:none}
-.step{display:flex;align-items:center;border:1px solid var(--line);border-radius:3px;width:fit-content;background:var(--panel)}
+.step{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;width:fit-content;background:var(--panel)}
 .step button{width:40px;height:40px;border:0;background:none;cursor:pointer;font-size:17px;color:var(--ink2);transition:.2s}
 .step button:hover{background:var(--zaitun);color:var(--krem)}
 .step output{min-width:52px;text-align:center;font-size:14px}
@@ -620,7 +596,7 @@ footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:clamp(2
 @media(max-width:900px){footer .fgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){footer .fgrid{grid-template-columns:1fr}}
 footer .lab{color:#7E8A6A}
-footer h4{font-family:var(--d);font-size:26px;font-weight:400;margin:0 0 6px;color:#EDE6D7}
+footer h4{font-family:var(--logo);font-size:27px;font-weight:400;margin:0 0 6px;color:#EDE6D7}
 footer .tag2{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:#7E8A6A;margin-bottom:14px}
 footer p{font-size:14px;line-height:1.7;color:#9EA391;margin:0 0 14px;max-width:32ch;font-weight:300}
 footer ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
@@ -629,12 +605,12 @@ footer a.ln:hover{color:var(--tembaga2)}
 .soc{display:flex;gap:9px;margin-top:16px}
 .soc a{width:38px;height:38px;border:1px solid #333B27;border-radius:50%;display:grid;place-items:center;color:#C3BCAB;transition:.22s}
 .soc a:hover{background:var(--tembaga);color:#FFF6EA;border-color:var(--tembaga)}
-.mapmini{margin-top:14px;border:1px solid #333B27;border-radius:6px;overflow:hidden;display:block;position:relative}
+.mapmini{margin-top:14px;border:1px solid #333B27;border-radius:16px;overflow:hidden;display:block;position:relative}
 .mapmini .mm{aspect-ratio:16/9;background:#232A1C;position:relative}
 .mapmini .ov{position:absolute;left:0;right:0;bottom:0;padding:20px 14px 11px;
   background:linear-gradient(180deg,transparent,rgba(20,24,16,.9));font-size:10.5px;letter-spacing:.12em;
   text-transform:uppercase;color:#EDE6D7;display:flex;justify-content:space-between;gap:10px}
-.emg{border:1px solid #4A3324;background:#241A13;padding:15px 17px;border-radius:6px;margin-top:16px}
+.emg{border:1px solid #4A3324;background:#241A13;padding:15px 17px;border-radius:16px;margin-top:16px}
 .emg b{display:flex;align-items:center;gap:8px;color:#E0A17E;font-size:11.5px;letter-spacing:.16em;
   text-transform:uppercase;margin-bottom:9px;font-weight:500}
 .emg p{color:#BFA795;font-size:13.5px;margin:0;line-height:1.7}
@@ -670,7 +646,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 .drw .ph h3{margin:0;font-family:var(--d);font-size:25px;font-weight:400}
 .drw .pl2{flex:1;overflow-y:auto;padding:14px 22px}
 .drw .wrow{display:grid;grid-template-columns:62px 1fr auto;gap:13px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line2)}
-.drw .wrow .im{aspect-ratio:1;background-size:cover;background-position:center;border-radius:4px;background-color:var(--sunk)}
+.drw .wrow .im{aspect-ratio:1;background-size:cover;background-position:center;border-radius:10px;background-color:var(--sunk)}
 .drw .wrow b{font-size:14px;font-weight:500;display:block;line-height:1.35}
 .drw .wrow span{font-size:11px;color:var(--mute);display:block;margin-top:3px}
 .drw .rm2{border:0;background:none;color:var(--mute);cursor:pointer;padding:7px;transition:color .2s}
@@ -684,7 +660,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 .xb:hover{background:var(--zaitun);color:var(--krem);border-color:var(--zaitun)}
 .lb{position:fixed;inset:0;z-index:140;background:rgba(20,24,16,.96);display:none;place-items:center;padding:32px}
 .lb.on{display:grid}
-.lb img{max-width:94vw;max-height:82vh;object-fit:contain;border-radius:4px;animation:lbin .4s cubic-bezier(.2,.7,.3,1)}
+.lb img{max-width:94vw;max-height:82vh;object-fit:contain;border-radius:14px;animation:lbin .4s cubic-bezier(.2,.7,.3,1)}
 @keyframes lbin{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
 .lb .cap2{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:#C3BCAB;font-size:13.5px;padding:0 20px}
 .lb .cap2 span{font-size:10.5px;color:#7E8A6A;display:block;margin-top:5px;letter-spacing:.12em}
@@ -694,12 +670,6 @@ footer a.ln:hover{color:var(--tembaga2)}
 .lb .nav:hover{background:var(--tembaga);color:#FFF6EA;border-color:var(--tembaga)}
 .lb .prev{left:18px}.lb .next{right:18px}
 .lb .cls{position:absolute;top:20px;right:20px;width:46px;height:46px;transform:none}
-.mq{overflow:hidden;border-block:1px solid var(--line2);padding:15px 0;background:var(--krem2);transition:background .6s}
-.mq-in{display:flex;gap:48px;width:max-content;animation:mqs 46s linear infinite;font-family:var(--d);
-  font-size:clamp(19px,2.4vw,30px);color:var(--zaitun2);white-space:nowrap;align-items:center}
-.mq-in i{color:var(--tembaga);font-style:normal;font-size:.45em}
-@keyframes mqs{to{transform:translateX(-50%)}}
-.mq:hover .mq-in{animation-play-state:paused}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,90px);z-index:150;background:var(--zaitun);
   color:var(--krem);padding:13px 22px;border-radius:40px;font-size:13.5px;font-weight:400;box-shadow:var(--sh2);
   transition:transform .42s cubic-bezier(.3,1.3,.4,1);max-width:90vw}
@@ -763,8 +733,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 
 <aside class="rail" aria-label="Navigasi">
   <a href="#hero" class="lg" aria-label="Ke atas">
-    <svg viewBox="0 0 24 24" fill="none" stroke="var(--zaitun)" stroke-width="1.4" aria-hidden="true">
-      <path d="M4.5 21V10.5a7.5 7.5 0 0115 0V21"/><path d="M2.5 21h19M12 21v-5.5a2.4 2.4 0 014.8 0V21"/></svg>
+    <img src="img/logo-mark.png" alt="Casa Cali" style="width:100%;height:100%;object-fit:contain">
   </a>
   <div class="vt">Casa Cali</div>
   <nav class="sct" id="sct" aria-label="Loncat seksi"></nav>
@@ -783,8 +752,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 
   <div class="hero-top">
     <a href="#hero" class="brand">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FBF5EA" stroke-width="1.3" aria-hidden="true">
-        <path d="M4.5 21V10.5a7.5 7.5 0 0115 0V21"/><path d="M2.5 21h19M12 21v-5.5a2.4 2.4 0 014.8 0V21"/></svg>
+      <img src="img/logo-mark.png" alt="Casa Cali" width="34" height="34" style="object-fit:contain;flex:0 0 auto">
       <span class="bn">Casa Cali<small>Stay · Relax · Experience Banyuwangi</small></span>
     </a>
     <div class="wx" id="wx" title="Cuaca langsung Banyuwangi">
@@ -832,55 +800,18 @@ footer a.ln:hover{color:var(--tembaga2)}
   </div></div>
 </section>
 
-<div class="mq" aria-hidden="true"><div class="mq-in" id="mq1"></div></div>
-
-<!-- ══════ CERITA ══════ -->
-<section class="band band--sunk" id="cerita" style="padding-bottom:0">
-  <div class="wrap"><div class="sh rv">
-    <div><div class="eyeb"><span class="archmark"></span><span class="lab">Tentang Casa Cali</span></div>
-      <h2 class="d2">Dibuat dengan satu harapan sederhana.</h2></div>
-    <p class="shr">Lima bab pendek: kenapa rumah ini ada, siapa yang menjaganya, dan apa arti motif Gajah Oling di logo kami.</p>
-  </div></div>
-  <div class="chapters" id="chapters">
-    <div class="ch-media"><div class="ch-frame" id="chFrame"></div><span class="chnum" id="chNum">Bab satu</span></div>
-    <div class="ch-text">
-      <article class="chap" data-ch="0" data-img="img/kartu-about.jpg">
-        <span class="lab">Bab satu · Tentang rumah</span>
-        <h3 class="d3">Tempat untuk melambat, terhubung lagi, dan menikmati Banyuwangi.</h3>
-        <p class="body">Casa Cali dibuat dengan satu harapan sederhana: <strong>memberi setiap tamu tempat untuk melambat.</strong> Bukan sekadar tempat menumpang tidur di antara dua perjalanan.</p>
-        <p class="body">Ini rumah utuh untuk satu rombongan saja. Tiga kamar tidur, ruang tengah dengan sofa panjang, meja makan kayu ukir, dapur yang benar-benar bisa dipakai memasak, dan teras belakang berlampu yang menyala setiap petang.</p>
-        <blockquote class="pull">"Kami percaya hal-hal kecil membuat perbedaan terbesar."</blockquote>
-      </article>
-      <article class="chap" data-ch="1" data-img="img/kartu-surat.jpg">
-        <span class="lab">Bab dua · Surat dari tuan rumah</span>
-        <h3 class="d3">Anggap saja rumah sendiri.</h3>
-        <p class="body">Dari lukisan di dinding sampai tanaman tropis di halaman, sampai secangkir kopi hangat yang menunggu saat kalian datang — kami berharap setiap detail kecil membuat kalian merasa diterima.</p>
-        <p class="body">Kami tinggalkan surat tulisan tangan di meja makan, beserta daftar tempat makan dan tempat jalan favorit kami. Kalau ada yang kurang atau bingung, cukup kirim pesan. Kami hampir selalu membalas dalam lima belas menit.</p>
-        <p class="body"><strong>— Keluarga Casa Cali</strong></p>
-      </article>
-      <article class="chap" data-ch="2" data-img="img/ruang-tamu-kursi-2.jpg">
-        <span class="lab">Bab tiga · Motif Gajah Oling</span>
-        <h3 class="d3">Ada motif tersembunyi di dalam logo kami.</h3>
-        <p class="body">Kalau diperhatikan, di pintu logo Casa Cali ada lengkungan halus <strong>motif Gajah Oling</strong> — salah satu simbol budaya Banyuwangi yang paling bermakna.</p>
-        <p class="body">Motif ini melambangkan keselarasan, kebijaksanaan, dan rasa syukur. Tiga hal yang kami harap ikut terasa selama kalian menginap. Lengkungan yang sama kami pakai berulang di rumah ini: pada bingkai pintu, pada cermin, dan pada bangku teras.</p>
-      </article>
-      <article class="chap" data-ch="3" data-img="img/ilustrasi-budaya.jpg">
-        <span class="lab">Bab empat · Budaya Osing</span>
-        <h3 class="d3">Banyuwangi punya budaya yang masih hidup, bukan pajangan.</h3>
-        <p class="body">Gandrung, Seblang, Kebo-keboan, Barong Kemiren — semuanya masih dijalankan warga, bukan dipentaskan untuk turis. Kalau kalian datang di bulan yang tepat, kami beri tahu jadwalnya.</p>
-        <p class="body">Kami sediakan panduan acara budaya sepanjang tahun di rumah, lengkap dengan bulan perkiraannya. <strong>Ngopi Sepuluh Ewu</strong> di Desa Kemiren adalah favorit kami — sepuluh ribu cangkir kopi disuguhkan gratis di sepanjang jalan desa.</p>
-      </article>
-      <article class="chap" data-ch="4" data-img="img/teras-bangku.jpg">
-        <span class="lab">Bab lima · Menjaga rumah bersama</span>
-        <h3 class="d3">Beberapa hal kecil yang kami minta tolong.</h3>
-        <p class="body">Rumah ini kami rawat sendiri, bukan lewat manajemen properti. Jadi hal-hal kecil sangat berarti — dan semuanya ada di lembar aturan rumah yang kami taruh di meja makan.</p>
-        <div class="vals">
-          <div><b>Matikan saat pergi</b><span>AC, TV, dan lampu dimatikan saat meninggalkan rumah</span></div>
-          <div><b>Air secukupnya</b><span>Gunakan air dengan bijak, terutama di musim kemarau</span></div>
-          <div><b>Rawat tanamannya</b><span>Tanaman di teras dan halaman kami rawat sendiri</span></div>
-          <div><b>Tenang setelah 22:00</b><span>Rumah ini berada di lingkungan warga, bukan area komersial</span></div>
-        </div>
-      </article>
+<!-- ══════ TENTANG ══════ -->
+<section class="band band--sunk" id="cerita">
+  <div class="wrap">
+    <div style="max-width:640px;margin-inline:auto;text-align:center">
+      <span class="lab">Tentang Casa Cali</span>
+      <h3 class="d2" style="margin-top:10px">Lebih dari sekadar tempat menginap.</h3>
+      <p class="sk" style="display:block;margin:8px 0 22px">More Than Just a Place to Stay</p>
+      <p class="body" style="margin-inline:auto">Casa Cali dibuat dengan satu harapan sederhana: <strong>memberi setiap tamu tempat untuk melambat, terhubung kembali, dan menikmati keindahan Banyuwangi.</strong></p>
+      <p class="body" style="margin:13px auto 0">Kami percaya hal-hal kecil membuat perbedaan terbesar. Dari lukisan di dinding dan tanaman tropis di halaman, sampai secangkir kopi hangat yang menunggu — kami harap setiap detail kecil membuat kalian merasa diterima.</p>
+      <p class="body" style="margin:13px auto 0">Kalau diperhatikan, ada lengkungan halus <strong>motif Gajah Oling</strong> di logo kami — salah satu simbol budaya Banyuwangi yang paling bermakna, melambangkan keselarasan, kebijaksanaan, dan rasa syukur selama kalian menginap.</p>
+      <p class="body" style="margin:13px auto 0">Baik kalian datang untuk menjelajah Banyuwangi, menghabiskan waktu bersama keluarga, atau sekadar beristirahat sejenak, kami harap Casa Cali menjadi bagian kecil dari kenangan indah kalian.</p>
+      <blockquote class="pull" style="margin-inline:auto;border-left:0;border-top:2px solid var(--tembaga);padding-left:0;padding-top:18px;text-align:center">"Stay. Relax. Experience Banyuwangi."</blockquote>
     </div>
   </div>
 </section>
@@ -889,7 +820,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band" id="galeri">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Galeri</span></div>
+      <div><div class="eyeb"><span class="lab">Galeri</span></div>
         <h2 class="d2">Dua puluh tujuh sudut rumah, apa adanya.</h2></div>
       <p class="shr">Semua foto diambil di rumah ini, tanpa lensa ultra-lebar. Klik untuk memperbesar, tekan hati untuk menyimpan.</p>
     </div>
@@ -902,20 +833,13 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band band--sunk" id="tur">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Tur rumah</span></div>
+      <div><div class="eyeb"><span class="lab">Tur rumah</span></div>
         <h2 class="d2">Lihat sendiri sebelum memesan.</h2></div>
-      <p class="shr">Geser untuk melihat sekeliling tiap ruangan, klik denah untuk berpindah, dan tonton video keliling rumah.</p>
+      <p class="shr">Klik denah untuk melihat isi tiap ruangan.</p>
     </div>
     <div class="tourgrid">
-      <div class="rv">
-        <div class="pano" id="pano" tabindex="0" role="img" aria-label="Panorama ruangan, seret untuk melihat sekeliling">
-          <div class="sphere" id="sphere"></div><div class="vig"></div>
-          <div class="hint"><svg width="14" height="14"><use href="#i-360"/></svg> Seret untuk melihat sekeliling</div>
-        </div>
-        <div class="roomtabs" id="panoTabs" role="group" aria-label="Pilih ruangan"></div>
-      </div>
-      <div class="fpwrap rv dl1">
-        <div class="eyeb" style="margin-bottom:12px"><span class="archmark"></span><span class="lab">Denah — klik ruangan</span></div>
+      <div class="fpwrap rv">
+        <div class="eyeb" style="margin-bottom:12px"><span class="lab">Denah — klik ruangan</span></div>
         <div class="fp">
           <svg viewBox="0 0 340 262" role="group" aria-label="Denah interaktif Casa Cali">
             <rect class="rm" data-fp="0" x="14" y="14" width="130" height="80"/>
@@ -939,26 +863,11 @@ footer a.ln:hover{color:var(--tembaga2)}
         </div>
         <div class="fpinfo" id="fpInfo">
           <h4>Denah Casa Cali</h4>
-          <p>Satu lantai, delapan ruang. Pilih salah satu untuk melihat isinya dan berpindah ke panorama ruangan itu.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tourgrid" style="margin-top:clamp(24px,3vw,42px)">
-      <div class="rv">
-        <div class="eyeb" style="margin-bottom:12px"><span class="archmark"></span><span class="lab">Video keliling rumah</span></div>
-        <div class="vwrap">
-          <video id="walkVid" controls playsinline preload="none" poster="img/ruang-tengah.jpg">
-            <source src="assets/casa-cali-keliling.mp4" type="video/mp4"></video>
-          <div class="vfall" id="walkFall" style="background-image:url('img/ruang-tengah.jpg')">
-            <div class="pl"><span class="ring"><svg width="21" height="21"><use href="#i-play"/></svg></span>
-              <span class="cap">Video keliling rumah</span>
-              <span class="sub">Satu ambilan dari gerbang depan, lewat ruang tengah dan dapur, berakhir di teras saat lampu menyala.</span></div>
-          </div>
+          <p>Satu lantai, delapan ruang. Pilih salah satu untuk melihat isinya.</p>
         </div>
       </div>
       <div class="rv dl1">
-        <div class="eyeb" style="margin-bottom:12px"><span class="archmark"></span><span class="lab">Senja &amp; malam — geser</span></div>
+        <div class="eyeb" style="margin-bottom:12px"><span class="lab">Senja &amp; malam — geser</span></div>
         <div class="ba" id="ba" tabindex="0" role="slider" aria-label="Bandingkan rumah saat senja dan malam" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
           <div class="l" style="background-image:url('img/fasad-senja.jpg')"></div>
           <div class="r" style="background-image:url('img/teras-malam.jpg')"></div>
@@ -975,18 +884,11 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band" id="isi">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Isi rumah</span></div>
-        <h2 class="d2">Klik apa pun di dalam foto ini.</h2></div>
-      <p class="shr">Lima titik di ruang tengah. Sentuh salah satunya untuk tahu ceritanya.</p>
+      <div><div class="eyeb"><span class="lab">Isi rumah</span></div>
+        <h2 class="d2">Apa saja yang termasuk.</h2></div>
+      <p class="shr">Klik untuk detail masing-masing.</p>
     </div>
-    <div class="tourgrid">
-      <div class="hot rv" id="hot"><img id="hotImg" src="img/ruang-tengah.jpg" alt="Ruang tengah Casa Cali"></div>
-      <div class="hotinfo rv dl1" id="hotInfo"></div>
-    </div>
-    <div style="margin-top:clamp(32px,4vw,58px)">
-      <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Apa saja yang termasuk — klik untuk detail</span></div>
-      <div class="inc rv" id="inc"></div>
-    </div>
+    <div class="inc rv" id="inc"></div>
   </div>
 </section>
 
@@ -994,19 +896,19 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band band--sunk" id="kamar">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Kamar &amp; ruang</span></div>
+      <div><div class="eyeb"><span class="lab">Kamar &amp; ruang</span></div>
         <h2 class="d2">Tiga kamar, semuanya untukmu.</h2></div>
       <p class="shr">Casa Cali disewakan utuh — kamu tidak berbagi rumah dengan tamu lain. Harga di bawah adalah harga seluruh rumah.</p>
     </div>
     <div class="rooms rv" id="roomList"></div>
 
     <div style="margin-top:clamp(32px,4vw,56px)" class="rv">
-      <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Perbandingan kamar</span></div>
+      <div class="eyeb" style="margin-bottom:14px"><span class="lab">Perbandingan kamar</span></div>
       <div class="cmp" id="cmp"></div>
     </div>
 
     <div style="margin-top:clamp(32px,4vw,56px)" class="rv">
-      <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Waktu masuk &amp; keluar</span></div>
+      <div class="eyeb" style="margin-bottom:14px"><span class="lab">Waktu masuk &amp; keluar</span></div>
       <div class="timeline">
         <div><span class="lab">Check-in</span><b>14:00 – 21:00</b><span>Kami temui langsung di rumah dan antar berkeliling sebentar.</span></div>
         <div><span class="lab">Check-in larut</span><b>Sampai 23:00</b><span>Bisa, gratis. Kabari lewat WhatsApp supaya lampu depan dinyalakan.</span></div>
@@ -1016,7 +918,7 @@ footer a.ln:hover{color:var(--tembaga2)}
     </div>
 
     <div style="margin-top:clamp(28px,3.4vw,46px)" class="rv">
-      <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Aturan rumah</span></div>
+      <div class="eyeb" style="margin-bottom:14px"><span class="lab">Aturan rumah</span></div>
       <div class="rules" id="rules"></div>
       <p class="body" style="margin-top:18px;font-size:14px">Terima kasih telah membantu menjaga Casa Cali tetap indah dan nyaman. Kami berharap kalian pulang membawa kenangan indah dari Banyuwangi.</p>
     </div>
@@ -1027,7 +929,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band" id="jelajah">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Explore Banyuwangi</span></div>
+      <div><div class="eyeb"><span class="lab">Explore Banyuwangi</span></div>
         <h2 class="d2">Gunung, air terjun, pantai, dan pulau — semuanya satu kabupaten.</h2></div>
       <p class="shr">Waktu tempuh adalah perkiraan berkendara dari Casa Cali. Klik penanda di peta atau baris di daftar.</p>
     </div>
@@ -1045,8 +947,8 @@ footer a.ln:hover{color:var(--tembaga2)}
             <path class="rd" d="M300 200 C266 226 232 262 212 306"/>
             <path class="rd" d="M320 120 C296 96 272 76 254 62"/>
             <g class="home" transform="translate(300,186)"><circle class="ring" r="11"/><circle r="7"/></g>
-            <text x="312" y="190" font-size="7.4" fill="var(--ink)" font-weight="600" font-family="Poppins,sans-serif">CASA CALI</text>
-            <text x="372" y="120" font-size="14" fill="var(--mute)" font-family="'Playfair Display',serif" transform="rotate(90 372 120)">SELAT BALI</text>
+            <text x="312" y="190" font-size="7.4" fill="var(--ink)" font-weight="600" font-family="'Plus Jakarta Sans',sans-serif">CASA CALI</text>
+            <text x="372" y="120" font-size="14" fill="var(--mute)" font-family="'Plus Jakarta Sans',sans-serif" transform="rotate(90 372 120)">SELAT BALI</text>
             <g id="pins"></g>
           </g>
         </svg>
@@ -1064,7 +966,7 @@ footer a.ln:hover{color:var(--tembaga2)}
       </div>
     </div>
     <div style="margin-top:clamp(34px,4vw,56px)">
-      <div class="eyeb" style="margin-bottom:6px"><span class="archmark"></span><span class="lab">Panduan lengkap dari tuan rumah</span></div>
+      <div class="eyeb" style="margin-bottom:6px"><span class="lab">Panduan lengkap dari tuan rumah</span></div>
       <p class="body" style="margin-bottom:18px">Enam lembar panduan yang kami cetak dan taruh di rumah. Klik untuk membaca versi besarnya.</p>
       <div class="guide rv" id="guide"></div>
     </div>
@@ -1075,7 +977,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band band--sunk" id="sudut">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Sudut favorit</span></div>
+      <div><div class="eyeb"><span class="lab">Sudut favorit</span></div>
         <h2 class="d2">Sembilan tempat di rumah ini, dan jam terbaiknya.</h2></div>
       <p class="shr">Setiap sudut punya waktunya sendiri. Ini yang paling sering dipakai tamu.</p>
     </div>
@@ -1087,7 +989,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band" id="tamu">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Pengalaman tamu</span></div>
+      <div><div class="eyeb"><span class="lab">Pengalaman tamu</span></div>
         <h2 class="d2">Apa yang paling sering mereka sebut.</h2></div>
       <p class="shr">Ulasan ditarik dari Google, Airbnb, dan Booking.com. Kami tidak menyunting satu pun.</p>
     </div>
@@ -1116,26 +1018,22 @@ footer a.ln:hover{color:var(--tembaga2)}
             <div class="ef"><span>Nilai lokasi 9,4</span><a href="#" target="_blank" rel="noopener">Buka listing →</a></div>
           </div>
         </div>
-        <div style="margin-top:clamp(26px,3vw,42px)" class="rv">
-          <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Video kesan tamu</span></div>
-          <div class="vt" id="vt"></div>
-        </div>
       </div>
       <div>
         <div class="rv dl1">
-          <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Rincian penilaian</span></div>
+          <div class="eyeb" style="margin-bottom:14px"><span class="lab">Rincian penilaian</span></div>
           <div class="bars" id="bars"></div>
         </div>
         <div class="rv dl2" style="margin-top:clamp(26px,3vw,38px)">
-          <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Paling sering disebut</span></div>
+          <div class="eyeb" style="margin-bottom:14px"><span class="lab">Paling sering disebut</span></div>
           <div class="words" id="words"></div>
         </div>
         <div class="rv dl3" style="margin-top:clamp(26px,3vw,38px)">
-          <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Foto dari tamu · #casacalibanyuwangi</span></div>
+          <div class="eyeb" style="margin-bottom:14px"><span class="lab">Foto dari tamu · #casacalibanyuwangi</span></div>
           <div class="ugc" id="ugc"></div>
         </div>
         <div class="rv dl3" style="margin-top:clamp(26px,3vw,38px)">
-          <div class="eyeb" style="margin-bottom:14px"><span class="archmark"></span><span class="lab">Sorotan Instagram</span></div>
+          <div class="eyeb" style="margin-bottom:14px"><span class="lab">Sorotan Instagram</span></div>
           <div class="ighl" id="ighl"></div>
         </div>
       </div>
@@ -1143,25 +1041,11 @@ footer a.ln:hover{color:var(--tembaga2)}
   </div>
 </section>
 
-<div class="mq" aria-hidden="true"><div class="mq-in" id="mq2"></div></div>
-
-<!-- ══════ PAKET ══════ -->
-<section class="band" id="paket">
-  <div class="wrap">
-    <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Paket menginap</span></div>
-        <h2 class="d2">Lima cara menikmati Banyuwangi dari sini.</h2></div>
-      <p class="shr">Semua paket memakai seluruh rumah. Harga sudah termasuk yang tertulis, tanpa tambahan saat check-in.</p>
-    </div>
-    <div class="packs rv" id="packs"></div>
-  </div>
-</section>
-
 <!-- ══════ PEMESANAN ══════ -->
 <section class="band band--sunk" id="pesan">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Pemesanan</span></div>
+      <div><div class="eyeb"><span class="lab">Pemesanan</span></div>
         <h2 class="d2">Pilih tanggal, lihat harganya, kirim lewat WhatsApp.</h2></div>
       <p class="shr">Tidak ada pembayaran di halaman ini. Kami kirim tautan pembayaran setelah tanggal dikonfirmasi.</p>
     </div>
@@ -1226,7 +1110,7 @@ footer a.ln:hover{color:var(--tembaga2)}
 <section class="band" id="faq">
   <div class="wrap">
     <div class="sh rv">
-      <div><div class="eyeb"><span class="archmark"></span><span class="lab">Pertanyaan</span></div>
+      <div><div class="eyeb"><span class="lab">Pertanyaan</span></div>
         <h2 class="d2">Yang paling sering ditanya sebelum memesan.</h2></div>
       <p class="shr">Belum terjawab? Kirim pesan WhatsApp — kami balas rata-rata dalam 15 menit, jam 07:00–22:00 WIB.</p>
     </div>
@@ -1271,7 +1155,6 @@ footer a.ln:hover{color:var(--tembaga2)}
           <li><a class="ln" href="#jelajah">Explore Banyuwangi</a></li>
           <li><a class="ln" href="#sudut">Sudut favorit</a></li>
           <li><a class="ln" href="#tamu">Ulasan tamu</a></li>
-          <li><a class="ln" href="#paket">Paket</a></li>
           <li><a class="ln" href="#pesan">Pemesanan</a></li>
         </ul>
       </div>
@@ -1370,19 +1253,10 @@ const GAL=[
  ['Teras depan malam hari','luar','teras-malam'],
  ['Bangku lengkung di teras','luar','teras-bangku'],
  ['Sudut kopi pagi','ruang','sudut-kopi'],
- ['Bunga dan surat selamat datang','ruang','bunga-selamat-datang'],
- ['Logo Casa Cali','ruang','logo']
+ ['Bunga dan surat selamat datang','ruang','bunga-selamat-datang']
 ];
 const GCATS=[['all','Semua'],['ruang','Ruang dalam'],['kamar','Kamar'],['dapur','Dapur'],['anak','Sudut anak'],['luar','Luar ruang']];
 
-const PANOS=[
- {n:'Ruang tengah',img:'ruang-tengah'},
- {n:'Ruang tamu',img:'ruang-tamu-kursi'},
- {n:'Ruang makan',img:'ruang-makan'},
- {n:'Dapur',img:'dapur-2'},
- {n:'Kamar Sage',img:'kamar-sage'},
- {n:'Teras',img:'teras-lampu'}
-];
 const FP=[
  ['Kamar Sage','Kasur queen · AC','Kamar paling luas. Sprei hijau muda, lemari kayu, dan handuk digulung menunggu di atas kasur.',['Queen 160','2 tamu','AC'],4],
  ['Kamar Blush','Kasur queen · AC','Menghadap pintu hijau ke ruang tengah, dengan cermin besar dan sprei merah muda lembut.',['Queen 160','2 tamu','AC'],4],
@@ -1392,13 +1266,6 @@ const FP=[
  ['Dapur','Kompor · kulkas · alat lengkap','Kompor, kulkas, penanak nasi, pisau, talenan, dan rak bumbu. Cukup untuk masak sungguhan.',['Kompor','Kulkas','Alat masak'],3],
  ['Ruang makan','Meja ukir 6 kursi','Meja kayu ukir dengan enam kursi dan satu kursi tinggi anak. Tudung saji sudah disediakan.',['6 kursi','Kursi bayi'],2],
  ['Teras','Lampu tali · bangku lengkung','Bangku lengkung berbantal, batu pijakan, dan lampu tali yang menyala setiap petang.',['Lampu tali','Bangku'],5]
-];
-const HOTPTS=[
- [22,58,'Sofa hijau tosca','Sofa bentuk L yang muat untuk semua orang sekaligus. Bantalnya bisa dipindah ke lantai kalau anak-anak mau nonton lebih dekat.','Ruang tengah'],
- [50,26,'Kipas angin dinding','Selain AC di kamar, ruang tengah memakai kipas dinding. Lebih hemat dan tidak membuat tenggorokan kering saat siang.','Dipasang 2025'],
- [70,64,'Karpet bermotif','Karpet tenun bermotif hangat yang jadi alas main anak-anak. Kami cuci di antara setiap tamu.','Dicuci tiap tamu baru'],
- [88,40,'Rak dinding kayu','Tempat kami menaruh tanaman kecil dan buku. Silakan pinjam bukunya, tinggal kembalikan sebelum pulang.','Rak buku terbuka'],
- [12,44,'Pintu hijau','Warna hijau zaitun yang sama dengan pintu di logo kami. Pintu ini menghubungkan ruang tengah dengan kamar-kamar.','Warna khas Casa Cali']
 ];
 const INC=[
  ['i-home','Seluruh rumah untukmu','Casa Cali disewakan utuh untuk satu rombongan. Tidak ada tamu lain, tidak ada area yang dibagi. Hanya tamu yang terdaftar saat reservasi yang boleh menginap.'],
@@ -1448,7 +1315,6 @@ const RULES=[
  ['ok','i-home','Anggap rumah sendiri','Perlakukan Casa Cali seperti rumah sendiri. Hanya tamu yang terdaftar saat reservasi yang diperbolehkan menginap.'],
  ['ok','i-clock','Tenang setelah 22:00','Demi kenyamanan bersama dan menghormati tetangga, mohon menjaga ketenangan setelah pukul 22.00 WIB.'],
  ['no','i-smoke','Dilarang merokok di dalam','Silakan gunakan area luar yang telah disediakan. Ini juga menjaga bau tidak menempel di kasur dan gorden.'],
- ['ok','i-ac','Matikan saat pergi','Mohon matikan AC, TV, lampu, dan peralatan elektronik saat meninggalkan rumah. Pastikan pintu dan jendela terkunci.'],
  ['ok','i-kid','Anak dalam pengawasan','Anak-anak tetap dalam pengawasan orang tua selama berada di area Casa Cali. Ada pojok mainan dan kursi makan tinggi.'],
  ['ok','i-bath','Kamar mandi','Mohon tidak membuang tisu, pembalut, popok, atau benda lain ke dalam toilet. Gunakan air dengan bijak.'],
  ['ok','i-leaf','Area luar','Mari bersama menjaga tanaman dan fasilitas yang tersedia. Gunakan area parkir dengan rapi.'],
@@ -1559,13 +1425,14 @@ $('#dnbtn').onclick=()=>{
 };
 
 /* ═══ NAV & GULIR ═══ */
-const SECS=[['hero','Awal'],['cerita','Cerita'],['galeri','Galeri'],['tur','Tur'],['isi','Isi rumah'],['kamar','Kamar'],['jelajah','Jelajah'],['sudut','Sudut'],['tamu','Tamu'],['paket','Paket'],['pesan','Pesan'],['faq','Tanya']];
+const SECS=[['hero','Awal'],['cerita','Cerita'],['galeri','Galeri'],['tur','Tur'],['isi','Isi rumah'],['kamar','Kamar'],['jelajah','Jelajah'],['sudut','Sudut'],['tamu','Tamu'],['pesan','Pesan'],['faq','Tanya']];
 $('#sct').innerHTML=SECS.map(s=>`<a href="#${s[0]}" data-s="${s[0]}" title="${s[1]}" aria-label="${s[1]}"></a>`).join('');
 function onScroll(){
   const h=document.documentElement, max=h.scrollHeight-innerHeight;
   const p=max>0?Math.min(scrollY/max,1):0;
   const tp=$('#tprog'); if(tp) tp.style.width=(p*100)+'%';
-  $('#dock').classList.toggle('show',scrollY>innerHeight*0.5);
+  const nearFooter=document.querySelector('footer')?.getBoundingClientRect().top<innerHeight*0.75;
+  $('#dock').classList.toggle('show',scrollY>innerHeight*0.5&&!nearFooter);
   let cur=SECS[0][0];
   for(const s of SECS){const el=document.getElementById(s[0]); if(el&&el.getBoundingClientRect().top<=innerHeight*0.42) cur=s[0];}
   $$('#sct a').forEach(a=>a.classList.toggle('on',a.dataset.s===cur));
@@ -1660,33 +1527,12 @@ function paintGal(cat){
 $$('#galFilters button').forEach(b=>b.onclick=()=>{$$('#galFilters button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));paintGal(b.dataset.c)});
 paintGal('all');
 
-/* ═══ PANORAMA ═══ */
-(function(){
-  const el=$('#pano'), sph=$('#sphere'); let x=0,down=false,sx=0,s0=0,cur=0;
-  const draw=()=>{sph.style.backgroundPositionX=x+'px'};
-  const load=i=>{cur=i;sph.style.backgroundImage=`url('${IM(PANOS[i].img)}')`;x=0;draw()};
-  el.addEventListener('pointerdown',e=>{down=true;el.classList.add('drag');sx=e.clientX;s0=x;el.setPointerCapture(e.pointerId)});
-  el.addEventListener('pointermove',e=>{if(!down)return;
-    const lim=el.clientWidth*0.42; x=Math.max(-lim,Math.min(lim,s0+(e.clientX-sx)));el.classList.add('moved');draw()});
-  const up=()=>{down=false;el.classList.remove('drag')};
-  el.addEventListener('pointerup',up); el.addEventListener('pointerleave',up);
-  el.addEventListener('keydown',e=>{const lim=el.clientWidth*0.42;
-    if(e.key==='ArrowLeft'){x=Math.min(lim,x+50);el.classList.add('moved');draw();e.preventDefault()}
-    if(e.key==='ArrowRight'){x=Math.max(-lim,x-50);el.classList.add('moved');draw();e.preventDefault()}});
-  $('#panoTabs').innerHTML=PANOS.map((p,i)=>`<button data-p="${i}" aria-pressed="${i===0}">${p.n}</button>`).join('');
-  $$('#panoTabs button').forEach(b=>b.onclick=()=>{$$('#panoTabs button').forEach(z=>z.setAttribute('aria-pressed',String(z===b)));load(+b.dataset.p)});
-  load(0);
-  window.panoGo=i=>{const b=$(`#panoTabs [data-p="${i}"]`); if(b)b.click()};
-})();
-
 /* ═══ DENAH ═══ */
 $$('.fp .rm').forEach(r=>r.onclick=()=>{
   const d=FP[+r.dataset.fp];
   $$('.fp .rm').forEach(x=>x.classList.toggle('on',x===r));
   $('#fpInfo').innerHTML=`<h4>${d[0]}</h4><span class="lab">${d[1]}</span><p>${d[2]}</p>
     <div class="mt">${d[3].map(m=>`<span>${m}</span>`).join('')}</div>`;
-  window.panoGo(d[4]);
-  $('#pano').scrollIntoView({block:'center',behavior:RM?'auto':'smooth'});
 });
 
 /* ═══ VIDEO ═══ */
@@ -1695,7 +1541,6 @@ function wireVideo(v,f){
   V.addEventListener('loadeddata',()=>{ok=true;F.style.display='none'},{once:true});
   F.onclick=()=>{V.load();V.play().catch(()=>{});setTimeout(()=>{if(!ok)toast('Berkas video belum dipasang — taruh di folder assets/')},700)};
 }
-wireVideo('#walkVid','#walkFall');
 
 /* ═══ SENJA & MALAM ═══ */
 (function(){
@@ -1709,19 +1554,6 @@ wireVideo('#walkVid','#walkFall');
     if(e.key==='ArrowLeft'){el.style.setProperty('--sp',Math.max(c-4,0)+'%');e.preventDefault()}
     if(e.key==='ArrowRight'){el.style.setProperty('--sp',Math.min(c+4,100)+'%');e.preventDefault()}});
   el.style.setProperty('--sp','50%');
-})();
-
-/* ═══ HOTSPOT ═══ */
-(function(){
-  const show=(p,i)=>$('#hotInfo').innerHTML=`<span class="lab">Titik ${String(i+1).padStart(2,'0')} · ${p[4]}</span>
-    <h4>${p[2]}</h4><p>${p[3]}</p><div class="meta">Sentuh titik lain pada foto untuk melihat detailnya</div>`;
-  HOTPTS.forEach((p,i)=>{
-    const b=document.createElement('button');b.className='hp';b.type='button';
-    b.style.left=p[0]+'%';b.style.top=p[1]+'%';b.textContent=i+1;b.setAttribute('aria-label',p[2]);
-    b.onclick=()=>{$$('#hot .hp').forEach(x=>x.classList.toggle('on',x===b));show(p,i)};
-    $('#hot').appendChild(b);
-  });
-  show(HOTPTS[0],0);
 })();
 
 /* ═══ TERMASUK ═══ */
@@ -1835,22 +1667,6 @@ $('#words').innerHTML=WORDS.map(w=>`<span>${w[0]} <i>${w[1]}×</i></span>`).join
 $('#ugc').innerHTML=UGC.map((u,i)=>`<div data-u="${i}" style="background-image:url('${IM(u)}')"></div>`).join('');
 $$('#ugc div').forEach((d,i)=>d.onclick=()=>openLB(UGC.map(u=>({src:IM(u),cap:'Foto kiriman tamu · #casacalibanyuwangi'})),i));
 $('#ighl').innerHTML=IGH.map(h=>`<a href="#" aria-label="Sorotan ${h[0]}"><span class="ring2"><div style="background-image:url('${IM(h[1])}')"></div></span><b>${h[0]}</b></a>`).join('');
-$('#vt').innerHTML=VTS.map((v,i)=>`<div class="vwrap">
-  <video id="vt${i}" controls playsinline preload="none" poster="${IM(v[2])}"><source src="assets/testimoni-${i+1}.mp4" type="video/mp4"></video>
-  <div class="vfall" id="vtf${i}" style="background-image:url('${IM(v[2])}')">
-    <div class="pl"><span class="ring"><svg width="17" height="17"><use href="#i-play"/></svg></span><span class="cap">Kesan tamu</span></div></div>
-  <div class="who"><b>${v[0]}</b><span>${v[1]}</span></div></div>`).join('');
-VTS.forEach((v,i)=>wireVideo('#vt'+i,'#vtf'+i));
-
-/* ═══ PAKET ═══ */
-$('#packs').innerHTML=PACKS.map(p=>{
-  const harga=Math.round(HARGA*p.mult*(p.mult>=30?0.65:1));
-  return `<article class="pk"><div class="pim" style="background-image:url('${IM(p.seed)}')"><span class="pt">${p.t}</span></div>
-  <div class="pc"><h4>${p.n}</h4><p class="pd">${p.d}</p>
-  <ul>${p.li.map(l=>`<li><svg width="13" height="13"><use href="#i-check"/></svg>${l}</li>`).join('')}</ul>
-  <div class="pp"><span><b>${rupiah(harga)}</b><small>${p.mult} malam · seluruh rumah</small></span>
-    <a class="btn sm" href="#pesan" data-pk="${p.t}">Pilih</a></div></div></article>`}).join('');
-$$('#packs [data-pk]').forEach(a=>a.onclick=()=>{$('#ePack').value=a.dataset.pk;calcBill();toast('Paket '+a.dataset.pk+' dipilih')});
 
 /* ═══ KALENDER ═══ */
 const today=new Date();today.setHours(0,0,0,0);
@@ -1960,24 +1776,6 @@ $$('#acc .ai').forEach(el=>{const b=$('button',el);
   b.onclick=()=>{const o=el.classList.contains('open');
     $$('#acc .ai').forEach(x=>{x.classList.remove('open');$('button',x).setAttribute('aria-expanded','false')});
     if(!o){el.classList.add('open');b.setAttribute('aria-expanded','true')}}});
-
-/* ═══ CERITA ═══ */
-(function(){
-  const frame=$('#chFrame'), chaps=$$('#chapters .chap'), labels=['Bab satu','Bab dua','Bab tiga','Bab empat','Bab lima'];
-  chaps.forEach((c,i)=>{const d=document.createElement('div');d.className='cm'+(i===0?' on':'');
-    d.style.backgroundImage=`url('${c.dataset.img}')`;frame.appendChild(d)});
-  const cms=$$('#chFrame .cm');
-  const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
-    const i=+e.target.dataset.ch;cms.forEach((m,k)=>m.classList.toggle('on',k===i));
-    $('#chNum').textContent=labels[i]}}),{threshold:.4});
-  chaps.forEach(c=>ob.observe(c));
-})();
-
-/* ═══ MARQUEE ═══ */
-const MQ1=['Seluruh rumah untukmu','Tiga kamar ber-AC','Dapur lengkap','Pojok mainan anak','Teras berlampu','Parkir di dalam pagar'];
-const MQ2=['25 menit dari Bandara Banyuwangi','1 j 45 m ke Kawah Ijen','30 menit ke Pelabuhan Ketapang','Balas pesan < 15 menit','Stay. Relax. Experience Banyuwangi.'];
-const fill=(el,a)=>{const s=a.map(t=>`<span>${t}</span><i>❧</i>`).join('');el.innerHTML=s+s};
-fill($('#mq1'),MQ1);fill($('#mq2'),MQ2);
 
 /* ═══ MULAI ═══ */
 observeRV();onScroll();setTimeout(observeRV,300);
