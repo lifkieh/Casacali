@@ -769,7 +769,7 @@ footer a.ln:hover{color:var(--tembaga2)}
       <p>Satu rumah untuk keluargamu sendiri — bukan berbagi dengan tamu lain. Dapur lengkap, pojok mainan anak, dan teras berlampu untuk duduk lama-lama.</p>
       <div class="price">
         <span class="lab">Mulai dari</span>
-        <b>Rp 750.000</b>
+        <b>Rp 500.000</b>
         <small>per malam · seluruh rumah</small>
       </div>
     </div>
@@ -910,10 +910,10 @@ footer a.ln:hover{color:var(--tembaga2)}
     <div style="margin-top:clamp(32px,4vw,56px)" class="rv">
       <div class="eyeb" style="margin-bottom:14px"><span class="lab">Waktu masuk &amp; keluar</span></div>
       <div class="timeline">
-        <div><span class="lab">Check-in</span><b>14:00 – 21:00</b><span>Kami temui langsung di rumah dan antar berkeliling sebentar.</span></div>
-        <div><span class="lab">Check-in larut</span><b>Sampai 23:00</b><span>Bisa, gratis. Kabari lewat WhatsApp supaya lampu depan dinyalakan.</span></div>
+        <div><span class="lab">Check-in</span><b>14:00 – 21:00</b><span>Host tidak menemui langsung — kode pintu pagar dikirim lewat WhatsApp.</span></div>
+        <div><span class="lab">Check-in larut</span><b>Fleksibel</b><span>Tidak ada batasan jam, tanya langsung ke host lewat DM. Ada biaya tambahan.</span></div>
         <div><span class="lab">Check-out</span><b>Sebelum 12:00</b><span>Kembalikan kunci sesuai petunjuk dan pastikan pintu serta jendela terkunci.</span></div>
-        <div><span class="lab">Check-out lambat</span><b>Sampai 15:00</b><span>Kalau tidak ada tamu berikutnya, biasanya bisa. Konfirmasi H-1.</span></div>
+        <div><span class="lab">Check-out lambat</span><b>Fleksibel</b><span>Tidak ada batasan jam, tanya langsung ke host lewat DM. Ada biaya tambahan.</span></div>
       </div>
     </div>
 
@@ -1224,7 +1224,7 @@ const IM=n=>`img/${n}.jpg`;
 const rupiah=n=>'Rp '+Math.round(n).toLocaleString('id-ID');
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const WA='6280000000000';   /* ← GANTI dengan nomor WhatsApp Casa Cali */
-const HARGA=750000;         /* ← GANTI dengan tarif seluruh rumah per malam */
+const HARGA=500000;         /* ← GANTI dengan tarif seluruh rumah per malam */
 
 /* ═══ DATA ═══ */
 const GAL=[
@@ -1312,7 +1312,7 @@ const CMPROWS=[
 ];
 const RULES=[
  ['ok','i-home','Anggap rumah sendiri','Perlakukan Casa Cali seperti rumah sendiri. Hanya tamu yang terdaftar saat reservasi yang diperbolehkan menginap.'],
- ['ok','i-clock','Tenang setelah 22:00','Demi kenyamanan bersama dan menghormati tetangga, mohon menjaga ketenangan setelah pukul 22.00 WIB.'],
+ ['ok','i-clock','Tenang setelah 21:00','Demi kenyamanan bersama dan menghormati tetangga, mohon menjaga ketenangan setelah pukul 21.00 WIB.'],
  ['no','i-smoke','Dilarang merokok di dalam','Silakan gunakan area luar yang telah disediakan. Ini juga menjaga bau tidak menempel di kasur dan gorden.'],
  ['ok','i-kid','Anak dalam pengawasan','Anak-anak tetap dalam pengawasan orang tua selama berada di area Casa Cali. Ada pojok mainan dan kursi makan tinggi.'],
  ['ok','i-bath','Kamar mandi','Mohon tidak membuang tisu, pembalut, popok, atau benda lain ke dalam toilet. Gunakan air dengan bijak.'],
@@ -1401,14 +1401,14 @@ const PACKS=[
 ];
 const FAQS=[
  ['Casa Cali disewakan per kamar atau satu rumah?','Satu rumah utuh untuk satu rombongan. Kalian tidak berbagi dengan tamu lain — tiga kamar tidur, ruang tengah, dapur, dan teras semuanya untuk kalian sendiri. Hanya tamu yang terdaftar saat reservasi yang diperbolehkan menginap.'],
- ['Bisa check-in sendiri tanpa bertemu siapa pun?','Kami lebih suka menemui kalian langsung dan mengantar berkeliling sebentar — biasanya lima menit saja. Kalau datang larut, kabari lewat WhatsApp dan kami atur agar tetap bisa masuk dengan nyaman.'],
+ ['Bisa check-in sendiri tanpa bertemu siapa pun?','Bisa. Host tidak menemui langsung — kalian akan diberi kode pintu pagar lewat WhatsApp untuk masuk sendiri. Untuk check-in larut, tanya langsung ke host lewat DM karena ada biaya tambahan.'],
  ['Ada parkir?','Ada, di dalam halaman berpagar. Motor dan mobil bisa masuk, jadi tidak perlu parkir di jalan. Kami hanya minta tolong diparkir rapi agar tetap nyaman untuk semua.'],
  ['Boleh merokok?','Tidak di dalam rumah. Ada area luar yang sudah kami sediakan — teras belakang dan halaman depan. Ini terutama agar bau tidak menempel di kasur, gorden, dan sofa.'],
  ['Ramah anak?','Sangat. Ada pojok mainan dengan buku bergambar, balok susun, mobil-mobilan, dan djembe kecil, plus kursi makan tinggi untuk balita. Kami hanya minta anak-anak tetap dalam pengawasan orang tua selama di area rumah.'],
  ['Berapa jauh dari Kawah Ijen dan bandara?','Bandara Banyuwangi sekitar 25 menit, Pelabuhan Ketapang sekitar 30 menit, dan pos pendakian Kawah Ijen sekitar 1 jam 45 menit berkendara. Banyak tamu memakai Casa Cali sebagai basis sebelum naik Ijen dini hari.'],
- ['Boleh check-out lambat?','Biasanya bisa sampai pukul 15:00 kalau tidak ada tamu yang datang di hari yang sama. Konfirmasi H-1 lewat WhatsApp supaya kami cek jadwalnya.'],
+ ['Boleh check-out lambat?','Tidak ada batasan waktu tetap — tanya langsung ke host lewat DM, dan ada biaya tambahan yang berlaku.'],
  ['Bagaimana kebijakan pembatalannya?','Untuk pemesanan langsung ke kami, silakan tanyakan lewat WhatsApp saat memesan — kami sampaikan ketentuannya di awal, sebelum ada pembayaran. Pemesanan lewat Airbnb dan Booking.com mengikuti kebijakan masing-masing platform.'],
- ['Boleh mengadakan acara atau pesta?','Mohon tidak mengadakan pesta atau acara tanpa izin lebih dulu. Rumah ini berada di lingkungan warga, dan kami menjaga ketenangan setelah pukul 22.00. Untuk acara keluarga kecil, hubungi kami dulu — biasanya bisa diatur.']
+ ['Boleh mengadakan acara atau pesta?','Mohon tidak mengadakan pesta atau acara tanpa izin lebih dulu. Rumah ini berada di lingkungan warga, dan kami menjaga ketenangan setelah pukul 21.00. Untuk acara keluarga kecil, hubungi kami dulu — biasanya bisa diatur.']
 ];
 const BOOKED=[4,5,6,12,13,19,20,26,27,33,34,40,41,47,48,54,55,61,62,68,69,75,76,82,83];
 
