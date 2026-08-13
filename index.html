@@ -387,41 +387,102 @@ section[id]{scroll-margin-top:20px}
 .timeline span{font-size:12.5px;color:var(--mute);display:block;margin-top:6px;line-height:1.55}
 @media(max-width:720px){.timeline{flex-direction:column}.timeline div{border-right:0;border-bottom:1px solid var(--line2)}}
 
-/* peta */
-.mapgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
-@media(max-width:980px){.mapgrid{grid-template-columns:1fr}}
-.mapbox{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:background .6s}
-.mapbox svg{width:100%;height:auto;display:block;touch-action:none;cursor:grab}
-.mapbox svg.drag{cursor:grabbing}
-.mapbox .sea{fill:#CBDCDC}
-[data-mode="malam"] .mapbox .sea{fill:#16211F}
-.mapbox .land{fill:var(--krem2)}
-.mapbox .rd{stroke:var(--line);stroke-width:2.4;fill:none;stroke-linecap:round}
-.mapbox .mt{fill:var(--sunk)}
-.pin{cursor:pointer}
-.pin circle.bd{fill:var(--panel);stroke:var(--line);stroke-width:1.3;transition:.25s}
-.pin .ic{fill:var(--zaitun2);transition:.25s}
-.pin text{font-size:6.2px;fill:var(--ink2);pointer-events:none;transition:.25s;font-family:var(--s)}
-.pin:hover circle.bd,.pin.on circle.bd{fill:var(--tembaga);stroke:var(--tembaga);r:11}
-.pin:hover .ic,.pin.on .ic{fill:#FFF6EA}
-.pin:hover text,.pin.on text{fill:var(--ink);font-weight:500}
-.pin.dim{opacity:.18}
-.home circle{fill:var(--tembaga);stroke:var(--panel);stroke-width:2.4}
-.home .ring{fill:none;stroke:var(--tembaga);stroke-width:1.2;opacity:.35}
-.mapctl{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px}
-.mapctl button{width:32px;height:32px;border:1px solid var(--line);background:var(--panel);color:var(--ink2);
-  cursor:pointer;border-radius:8px;font-size:15px;display:grid;place-items:center;transition:.2s}
-.mapctl button:hover{background:var(--zaitun);color:var(--krem);border-color:var(--zaitun)}
-.nlist{display:flex;flex-direction:column;gap:1px;background:var(--line2);border:1px solid var(--line2);max-height:600px;overflow-y:auto}
-.nrow{background:var(--krem);padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;
-  align-items:center;cursor:pointer;transition:background .22s;border:0;text-align:left;width:100%}
-.nrow:hover,.nrow.on{background:var(--panel)}
-.nrow .ni{width:34px;height:34px;border-radius:50%;background:var(--krem2);display:grid;place-items:center;color:var(--daun);flex:0 0 auto}
-.nrow b{display:block;font-size:14px;font-weight:500;line-height:1.35}
-.nrow span{display:block;font-size:12.5px;color:var(--mute);margin-top:3px;line-height:1.45;font-weight:300}
-.nrow .tt{text-align:right;white-space:nowrap}
-.nrow .tt b{font-size:13.5px;font-weight:500}
-.nrow .tt span{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase}
+/* peta — denah kasar sekitar rumah */
+.dn{position:relative}
+.dn__frame{position:relative;border:1px solid var(--line);border-radius:20px;background:var(--panel);
+  box-shadow:var(--sh);padding:8px;overflow:hidden}
+.dn__svg{display:block;width:100%;height:auto}
+@media(max-width:760px){.dn__frame{display:none}}
+
+/* ---- elemen dasar diagram ---- */
+.dn-sea{fill:#CBDCDC;opacity:.55}
+[data-mode="malam"] .dn-sea{fill:#2A3A3A;opacity:.7}
+.dn-sea-t{fill:var(--mute);font:600 12px var(--d);letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+.dn-ring{fill:none;stroke:var(--line);stroke-width:1.2;stroke-dasharray:2 7;stroke-linecap:round}
+.dn-ring-t{fill:var(--mute);font:600 10.5px var(--d);letter-spacing:.14em;text-transform:uppercase}
+.dn-spoke{stroke:var(--line);stroke-width:1.4;stroke-linecap:round;transition:stroke .2s,stroke-width .2s}
+.dn-comp{fill:var(--mute);font:700 11px var(--d);letter-spacing:.16em}
+.dn-comp-n{fill:none;stroke:var(--mute);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- rumah di tengah: SATU-SATUNYA yang bisa diklik ---- */
+.dn-home{cursor:pointer}
+.dn-home:focus{outline:none}
+.dn-home-hit{fill:transparent;stroke:none}
+.dn-home:focus-visible .dn-home-hit{stroke:var(--tembaga);stroke-width:2.5;stroke-dasharray:4 5}
+.dn-home-r{fill:var(--tembaga);stroke:none;transition:fill .2s}
+.dn-home:hover .dn-home-r,.dn-home:focus-visible .dn-home-r{fill:var(--tembaga2)}
+.dn-home-ring{fill:none;stroke:var(--tembaga);stroke-width:1.5;opacity:.35;transition:opacity .2s}
+.dn-home:hover .dn-home-ring,.dn-home:focus-visible .dn-home-ring{opacity:.75}
+/* halo tipis supaya teks tetap kebaca walau kena garis penghubung */
+.dn-home-cue{fill:var(--tembaga);font:600 10px var(--d);letter-spacing:.1em;text-anchor:middle;
+  opacity:0;transition:opacity .2s;
+  stroke:var(--panel);stroke-width:4px;stroke-linejoin:round;paint-order:stroke fill}
+.dn-home:hover .dn-home-cue,.dn-home:focus-visible .dn-home-cue{opacity:1}
+/* teks di dalam bulatan tembaga: putih saat siang, gelap saat malam
+   (mode malam pakai tembaga yang lebih terang, jadi teks putih jadi tipis) */
+.dn-home-t{fill:#FFFCF7;font:700 15px var(--d);letter-spacing:.11em;text-anchor:middle}
+.dn-home-s{fill:#FFFCF7;font:500 9.5px var(--d);letter-spacing:.14em;text-anchor:middle;opacity:.82}
+.dn-home-i{fill:none;stroke:#FFFCF7;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+[data-mode="malam"] .dn-home-t,[data-mode="malam"] .dn-home-s{fill:#191E15}
+[data-mode="malam"] .dn-home-i{stroke:#191E15}
+
+/* ---- simpul: hiasan saja, tidak bisa diklik ---- */
+.dn-node{cursor:default}
+.dn-node .b{fill:var(--panel);stroke:var(--line);stroke-width:1.5}
+.dn-node .ic{fill:none;stroke:var(--zaitun2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dn-node .nm{fill:var(--ink);font:600 15px var(--d);letter-spacing:-.01em}
+.dn-node .sb{fill:var(--mute);font:500 11.5px var(--d)}
+.dn-node .tm{fill:var(--tembaga);font:700 12px var(--d)}
+
+/* ---- versi HP: daftar per arah mata angin ---- */
+.dn__mob{display:none}
+@media(max-width:760px){.dn__mob{display:block}}
+.dn__you{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:16px;
+  background:var(--tembaga);color:#fff;box-shadow:var(--sh);margin-bottom:8px;
+  text-decoration:none;transition:background .18s}
+.dn__you:hover,.dn__you:focus-visible{background:var(--tembaga2)}
+[data-mode="malam"] .dn__you{color:#191E15}
+.dn__you svg{width:22px;height:22px;flex:none}
+.dn__you b{display:block;font:700 15px/1.2 var(--d);letter-spacing:.1em}
+.dn__you span{display:block;font:500 11.5px/1.3 var(--d);opacity:.9;margin-top:3px;letter-spacing:0}
+.dn__grp{margin-top:16px}
+.dn__grp h3{margin:0 0 8px;font:700 10.5px/1 var(--d);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--daun);display:flex;align-items:center;gap:8px}
+.dn__grp h3::after{content:"";flex:1;height:1px;background:var(--line2)}
+.dn__card{display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:center;width:100%;
+  padding:13px 15px;margin-bottom:7px;border:1px solid var(--line);border-radius:14px;
+  background:var(--panel);box-shadow:var(--sh);text-align:left;color:inherit;
+  font-family:var(--d);box-sizing:border-box}
+.dn__ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:var(--krem2);border:1px solid var(--line2);color:var(--zaitun2)}
+.dn__ic svg{width:17px;height:17px}
+.dn__nm{display:block;font:600 14.5px/1.3 var(--d)}
+.dn__sb{display:block;font:500 12px/1.4 var(--d);color:var(--mute);margin-top:2px}
+.dn__tm{font:700 13px/1.2 var(--d);color:var(--tembaga);white-space:nowrap;text-align:right}
+.dn__tm small{display:block;font:500 9.5px/1.2 var(--d);color:var(--mute);letter-spacing:.08em;
+  text-transform:uppercase;margin-top:3px}
+
+/* ---- baris "lebih jauh" ---- */
+.dn__far{margin-top:20px;padding:18px 20px;border:1px dashed var(--line);border-radius:16px;
+  background:var(--krem2)}
+.dn__far p{margin:0 0 11px;font:600 11px/1 var(--d);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mute)}
+.dn__chips{display:flex;flex-wrap:wrap;gap:7px}
+.dn__chip{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink2);font:600 12.5px/1 var(--d)}
+.dn__chip em{font-style:normal;color:var(--mute);font-weight:500}
+
+/* ---- catatan + CTA ---- */
+.dn__note{margin:14px 0 0;font:500 12px/1.5 var(--d);color:var(--mute);text-align:center}
+.dn__cta{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:16px;
+  padding:17px;border-radius:14px;border:1px solid var(--line);background:var(--panel);
+  color:var(--ink);font:600 15px/1 var(--d);text-decoration:none;box-shadow:var(--sh);
+  transition:.18s;box-sizing:border-box}
+.dn__cta:hover,.dn__cta:focus-visible{border-color:var(--tembaga);color:var(--tembaga)}
+.dn__cta svg{width:17px;height:17px}
+.dn__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.dn *{transition-duration:.01ms!important}}
+
 .guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px}
 .gcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);cursor:zoom-in;transition:.3s}
 .gcard:hover{box-shadow:var(--sh);transform:translateY(-3px)}
@@ -929,40 +990,28 @@ footer a.ln:hover{color:var(--tembaga2)}
     <div class="sh rv">
       <div><div class="eyeb"><span class="lab">Explore Banyuwangi</span></div>
         <h2 class="d2">Gunung, air terjun, pantai, dan pulau — semuanya satu kabupaten.</h2></div>
-      <p class="shr">Waktu tempuh adalah perkiraan berkendara dari Casa Cali. Klik penanda di peta atau baris di daftar.</p>
+      <p class="shr">Denah kasar arah dan waktu tempuh dari Casa Cali. Klik rumahnya untuk membuka lokasi di Google Maps.</p>
     </div>
-    <div class="filters rv" id="nearFilters" role="group" aria-label="Saring tempat"></div>
-    <div class="mapgrid">
-      <div class="mapbox rv">
-        <svg viewBox="0 0 400 400" id="map" role="group" aria-label="Peta Banyuwangi dan sekitarnya">
-          <g id="mapg">
-            <rect class="sea" x="-120" y="-120" width="700" height="700"/>
-            <path class="land" d="M-40 -40 L336 -40 C344 40 338 110 330 168 C322 230 316 282 302 330 C286 368 240 382 196 372 C150 362 96 372 -40 368 Z"/>
-            <path class="mt" d="M150 150 L180 118 L206 152 L236 122 L262 158 L232 196 L172 194 Z"/>
-            <path class="rd" d="M320 96 C312 130 306 168 300 200 C294 240 288 286 284 322"/>
-            <path class="rd" d="M300 186 C268 180 232 176 200 172 C176 168 156 164 140 158"/>
-            <path class="rd" d="M300 200 C286 236 274 274 262 316 C252 342 240 356 226 364"/>
-            <path class="rd" d="M300 200 C266 226 232 262 212 306"/>
-            <path class="rd" d="M320 120 C296 96 272 76 254 62"/>
-            <g class="home" transform="translate(300,186)"><circle class="ring" r="11"/><circle r="7"/></g>
-            <text x="312" y="190" font-size="7.4" fill="var(--ink)" font-weight="600" font-family="'Plus Jakarta Sans',sans-serif">CASA CALI</text>
-            <text x="372" y="120" font-size="14" fill="var(--mute)" font-family="'Plus Jakarta Sans',sans-serif" transform="rotate(90 372 120)">SELAT BALI</text>
-            <g id="pins"></g>
-          </g>
-        </svg>
-        <div class="mapctl">
-          <button id="mzi" aria-label="Perbesar peta">+</button>
-          <button id="mzo" aria-label="Perkecil peta">−</button>
-          <button id="mrs" aria-label="Kembalikan tampilan"><svg width="14" height="14"><use href="#i-pin"/></svg></button>
-        </div>
+    <section class="dn" aria-label="Denah kasar sekitar Casa Cali">
+      <!-- diagram (layar lebar) -->
+      <div class="dn__frame rv" id="dnFrame" aria-hidden="true"></div>
+
+      <!-- daftar per arah (HP) -->
+      <div class="dn__mob rv" id="dnMob"></div>
+
+      <!-- yang jauh: cukup jadi teks -->
+      <div class="dn__far rv">
+        <p>Lebih jauh — 30 sampai 60 km</p>
+        <div class="dn__chips" id="dnFar"></div>
       </div>
-      <div>
-        <div class="nlist rv dl1" id="nlist"></div>
-        <a class="btn ghost" style="margin-top:16px;width:100%;justify-content:center"
-           href="https://www.google.com/maps/search/?api=1&query=Banyuwangi" target="_blank" rel="noopener">
-          <svg width="15" height="15"><use href="#i-pin"/></svg> Buka di Google Maps</a>
-      </div>
-    </div>
+
+      <p class="dn__note">Denah ini tidak berskala. Untuk jarak dan rute sebenarnya, buka Google&nbsp;Maps.</p>
+
+      <a class="dn__cta" id="dnCta" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Buka Casa Cali di Google Maps
+      </a>
+    </section>
     <div style="margin-top:clamp(34px,4vw,56px)">
       <div class="eyeb" style="margin-bottom:6px"><span class="lab">Panduan lengkap dari tuan rumah</span></div>
       <p class="body" style="margin-bottom:18px">Enam lembar panduan yang kami cetak dan taruh di rumah. Klik untuk membaca versi besarnya.</p>
@@ -1310,41 +1359,6 @@ const RULES=[
  ['no','i-no','Tanpa pesta','Mohon tidak mengadakan pesta atau acara tanpa izin, dan tidak membawa barang yang melanggar hukum.'],
  ['ok','i-key','Sebelum check-out','Pastikan tidak ada barang pribadi tertinggal, seluruh pintu dan jendela tertutup, dan kembalikan kunci sesuai petunjuk host.']
 ];
-const NEAR=[
- ['gunung','Kawah Ijen','Blue Fire, kawah belerang, dan sunrise paling ikonik',[196,164],'1 j 45 m','berkendara','i-mount'],
- ['gunung','Kalibendo Highland','Udara sejuk dengan perkebunan kopi dan pemandangan pegunungan',[226,180],'45 mnt','berkendara','i-mount'],
- ['air','Air Terjun Jagir','Air terjun paling mudah dijangkau dari kota',[240,150],'40 mnt','berkendara','i-water'],
- ['air','Air Terjun Kalibendo','Menyusuri jalur perkebunan menuju air terjun',[222,192],'50 mnt','berkendara','i-water'],
- ['air','Air Terjun Lider','Air terjun tertinggi di Banyuwangi',[204,232],'2 j','berkendara','i-water'],
- ['pantai','Pantai Boom Marina','Cocok untuk jalan santai sore hari',[318,176],'12 mnt','berkendara','i-beach'],
- ['pantai','Pantai Cacalan','Pantai tenang, cocok untuk keluarga',[320,156],'15 mnt','berkendara','i-beach'],
- ['pantai','Grand Watu Dodol (GWD)','Landmark batu besar di tepi pantai dan spot foto favorit',[318,106],'35 mnt','berkendara','i-beach'],
- ['pantai','Pulau Merah','Pantai paling populer untuk menikmati sunset',[212,318],'2 j 15 m','berkendara','i-beach'],
- ['pantai','Pantai Wedi Ireng','Pantai berpasir putih yang masih alami',[198,330],'2 j 30 m','berkendara','i-beach'],
- ['pantai','Pantai Mustika','Pantai cantik yang belum terlalu ramai',[220,338],'2 j 30 m','berkendara','i-beach'],
- ['pantai','Pantai Rajegwesi','Pantai dengan kampung nelayan yang unik',[244,332],'2 j 45 m','berkendara','i-beach'],
- ['pantai','Pantai Plengkung (G-Land)','Surga peselancar kelas dunia',[300,344],'3 j 30 m','berkendara','i-beach'],
- ['laut','Bangsring Underwater','Snorkeling, rumah apung, dan konservasi ikan hiu',[322,94],'40 mnt','berkendara','i-water'],
- ['laut','Pulau Tabuhan','Pulau kecil dengan air laut jernih',[352,84],'1 j + perahu','berkendara','i-water'],
- ['laut','Pulau Menjangan','Terkenal dengan terumbu karang yang indah',[366,66],'1 j 30 m + perahu','berkendara','i-water'],
- ['alam','De Djawatan','Hutan trembesi yang sering disebut "Lord of the Rings" Banyuwangi',[254,246],'45 mnt','berkendara','i-leaf'],
- ['alam','Alas Purwo National Park','Hutan tropis, savana, pantai, dan satwa liar',[296,314],'2 j 30 m','berkendara','i-leaf'],
- ['alam','Sadengan Savanna','Melihat rusa, banteng, dan satwa liar di habitatnya',[288,300],'2 j 30 m','berkendara','i-leaf'],
- ['alam','Baluran National Park','Dijuluki "Little Africa of Java", sekitar 1 jam dari Ketapang',[278,58],'1 j 30 m','berkendara','i-leaf'],
- ['budaya','Desa Wisata Osing Kemiren','Rumah adat, budaya Osing, dan Ngopi Sepuluh Ewu',[262,176],'25 mnt','berkendara','i-temple'],
- ['budaya','Museum Blambangan','Sejarah dan koleksi budaya Banyuwangi',[306,190],'10 mnt','berkendara','i-temple'],
- ['makan','Sego Tempong Mbok Wah','Ikon Banyuwangi, sambal tomat ranti yang pedasnya legendaris',[292,196],'12 mnt','berkendara','i-food'],
- ['makan','Sego Tempong Bu Wiwik','Sego tempong autentik yang dicintai warga lokal — enak dibungkus',[288,204],'14 mnt','berkendara','i-food'],
- ['makan','Rujak Soto Bu Har','Favorit kami. Sederhana, murah, dan disukai warga',[296,202],'13 mnt','berkendara','i-food'],
- ['makan','Rujak Soto Mbok Mbret','Salah satu rujak soto paling populer — siap mengantre saat ramai',[300,208],'15 mnt','berkendara','i-food'],
- ['makan','Sogok Ontong Coffee','Pilihan kami. Manual brew dari berbagai daerah, pemiliknya senang bercerita',[290,170],'12 mnt','berkendara','i-coffee'],
- ['makan','Banyuwangi Yacht Club','Sunset dari marina — pilihan kami untuk makan malam',[320,168],'15 mnt','berkendara','i-food'],
- ['makan','Kampung Mandar Fish Market','Ikan segar langsung dari nelayan, paling ramai pagi buta',[324,164],'14 mnt','berkendara','i-shop'],
- ['transit','Bandara Banyuwangi (BWX)','Penerbangan dari Surabaya dan Jakarta',[284,148],'25 mnt','berkendara','i-plane'],
- ['transit','Pelabuhan Ketapang','Feri ke Gilimanuk, Bali — 24 jam',[312,120],'30 mnt','berkendara','i-plane'],
- ['transit','Stasiun Banyuwangi Kota','Kereta dari Surabaya, Malang, dan Jember',[302,180],'10 mnt','berkendara','i-plane']
-];
-const NCATS=[['all','Semua'],['pantai','Pantai'],['gunung','Gunung'],['air','Air terjun'],['laut','Pulau & laut'],['alam','Alam & taman nasional'],['budaya','Budaya'],['makan','Makan & kopi'],['transit','Bandara & pelabuhan']];
 const GUIDE=[
  ['kartu-jelajah','Explore Banyuwangi','Gunung, pantai, dan pulau pilihan'],
  ['kartu-alam','Nature & Waterfalls','Taman nasional, air terjun, warisan budaya'],
@@ -1595,41 +1609,208 @@ $('#cmp').innerHTML=`<table><thead><tr><th></th>${ROOMS.map(r=>`<th><b>${r.n}</b
 :c==='no'?`<td class="no">Tidak</td>`:`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
 $('#rules').innerHTML=RULES.map(r=>`<div class="${r[0]}"><b><svg width="17" height="17"><use href="#${r[1]}"/></svg>${r[2]}</b><p>${r[3]}</p></div>`).join('');
 
-/* ═══ PETA ═══ */
-$('#nearFilters').innerHTML=NCATS.map((c,i)=>`<button data-n="${c[0]}" aria-pressed="${i===0}">${c[1]}</button>`).join('');
-$('#pins').innerHTML=NEAR.map((n,i)=>`<g class="pin" data-p="${i}" data-cat="${n[0]}" transform="translate(${n[3][0]},${n[3][1]})" tabindex="0" role="button" aria-label="${n[1]}, ${n[4]} ${n[5]}">
-  <circle class="bd" r="9"/><svg class="ic" x="-5.5" y="-5.5" width="11" height="11" viewBox="0 0 24 24"><use href="#${n[6]}"/></svg>
-  <text x="13" y="3">${n[1].length>24?n[1].slice(0,23)+'…':n[1]}</text></g>`).join('');
-$('#nlist').innerHTML=NEAR.map((n,i)=>`<button class="nrow" data-p="${i}" data-cat="${n[0]}">
-  <span class="ni"><svg width="17" height="17"><use href="#${n[6]}"/></svg></span>
-  <span><b>${n[1]}</b><span>${n[2]}</span></span>
-  <span class="tt"><b>${n[4]}</b><span>${n[5]}</span></span></button>`).join('');
-function pickNear(i){
-  $$('#pins .pin').forEach(p=>p.classList.toggle('on',+p.dataset.p===i));
-  $$('#nlist .nrow').forEach(r=>r.classList.toggle('on',+r.dataset.p===i));
-  const row=$(`#nlist .nrow[data-p="${i}"]`); if(row)row.scrollIntoView({block:'nearest',behavior:RM?'auto':'smooth'});
-}
-$$('#pins .pin').forEach(p=>{p.onclick=()=>pickNear(+p.dataset.p);
-  p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pickNear(+p.dataset.p)}}});
-$$('#nlist .nrow').forEach(r=>r.onclick=()=>pickNear(+r.dataset.p));
-$$('#nearFilters button').forEach(b=>b.onclick=()=>{
-  $$('#nearFilters button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
-  const c=b.dataset.n;
-  $$('#pins .pin').forEach(p=>p.classList.toggle('dim',c!=='all'&&p.dataset.cat!==c));
-  $$('#nlist .nrow').forEach(r=>r.style.display=(c==='all'||r.dataset.cat===c)?'':'none');
-});
-(function(){
-  const svg=$('#map'),g=$('#mapg');let k=1,tx=0,ty=0,down=false,sx=0,sy=0,x0=0,y0=0;
-  const ap=()=>g.setAttribute('transform',`translate(${tx},${ty}) scale(${k})`);
-  const zoom=f=>{const nk=Math.min(Math.max(k*f,.7),3.4);tx=200-(200-tx)*(nk/k);ty=200-(200-ty)*(nk/k);k=nk;ap()};
-  $('#mzi').onclick=()=>zoom(1.3);$('#mzo').onclick=()=>zoom(1/1.3);$('#mrs').onclick=()=>{k=1;tx=0;ty=0;ap()};
-  svg.addEventListener('pointerdown',e=>{down=true;svg.classList.add('drag');sx=e.clientX;sy=e.clientY;x0=tx;y0=ty});
-  svg.addEventListener('pointermove',e=>{if(!down)return;const r=svg.getBoundingClientRect(),s=400/r.width;
-    tx=x0+(e.clientX-sx)*s;ty=y0+(e.clientY-sy)*s;ap()});
-  const up=()=>{down=false;svg.classList.remove('drag')};
-  svg.addEventListener('pointerup',up);svg.addEventListener('pointerleave',up);
-  svg.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY<0?1.12:1/1.12)},{passive:false});
+/* ═══ DENAH KASAR ═══ */
+(function () {
+  'use strict';
+
+  /* ════════════════════════════════════════════════════════════════════════
+     SATU-SATUNYA tautan di seluruh denah ini: halaman Casa Cali di Google Maps.
+     Bulatan oren di tengah dan tombol di bawah sama-sama menuju ke sini.
+     Simpul lain sengaja TIDAK bisa diklik — biar tamu mendarat di rumah dulu,
+     baru menjelajah sendiri dari peta Google.
+     ════════════════════════════════════════════════════════════════════════ */
+  var HOME_URL = 'https://www.google.com/maps/place/Casa+Cali+Banyuwangi/@-8.1725533,114.3513211,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd145f6cbb440ab:0x77a9aade5764870a!8m2!3d-8.1725533!4d114.353896!16s%2Fg%2F11zgqvzthj';
+
+  /* ────────────────────────────────────────────────────────────────────────
+     SIMPUL DEKAT.
+       deg   = arah mata angin sebenarnya dari rumah (0 = utara, searah jarum jam)
+       ring  = 1 (lingkaran dalam, 4–6 km) atau 2 (lingkaran luar, 7–18 km)
+       side  = sisi mana label ditaruh: 'r' kanan, 'l' kiri
+       km    = jarak nyata, dipakai di tooltip saja — BUKAN untuk menggambar
+     Mau menambah tempat? Tambahkan barisnya, lalu geser sedikit `deg`
+     tetangganya kalau terasa terlalu rapat. Diagram ini memang diatur tangan.
+     ──────────────────────────────────────────────────────────────────────── */
+  var NODES = [
+    { n:'Grand Watu Dodol',    s:'Batu besar & spot foto', t:'35 mnt', km:9.4,
+      deg:42,    ring:2, side:'r', ic:'wave' },
+    { n:'Pelabuhan Ketapang',  s:'Feri ke Bali, 24 jam',   t:'15 mnt', km:5.1,
+      deg:58,    ring:1, side:'r', ic:'ship' },
+    { n:'Pantai Cacalan',      s:'Pantai terdekat',        t:'15 mnt', km:4.9,
+      deg:98.5,  ring:1, side:'r', ic:'wave' },
+    { n:'Pantai Boom Marina',  s:'Jalan sore & sunset',    t:'12 mnt', km:5.9,
+      deg:127,   ring:1, side:'r', ic:'wave' },
+    { n:'Kota Banyuwangi',     s:'Stasiun · museum · kuliner', t:'10–15 mnt', km:5.2,
+      deg:168,   ring:1, side:'r', ic:'city' },
+    { n:'Bandara BWX',         s:'Terminal bambu',         t:'25 mnt', km:15.4,
+      deg:186,   ring:2, side:'r', ic:'plane' },
+    { n:'Desa Osing Kemiren',  s:'Rumah adat & budaya Osing', t:'25 mnt', km:7.1,
+      deg:258,   ring:2, side:'l', ic:'house' },
+    { n:'Kawah Ijen',          s:'Blue fire & sunrise',    t:'1 j 45 m', km:17.8,
+      deg:316,   ring:2, side:'l', ic:'mount' }
+  ];
+
+  /* Yang jauh — cukup jadi chip teks, tidak digambar. */
+  var FAR = [
+    { n:'De Djawatan',   km:32 },
+    { n:'Baluran',       km:37 },
+    { n:'Pulau Merah',   km:60 },
+    { n:'Alas Purwo',    km:53 },
+    { n:'G-Land',        km:61 },
+    { n:'Air Terjun Lider', km:32 }
+  ];
+
+  /* Kelompok arah untuk versi HP. */
+  var DIRS = [
+    { k:'Ke utara — pesisir & penyeberangan', lo:20,  hi:75 },
+    { k:'Ke timur — pantai',                  lo:75,  hi:145 },
+    { k:'Ke selatan — kota & bandara',        lo:145, hi:215 },
+    { k:'Ke barat — desa & pegunungan',       lo:215, hi:20 }
+  ];
+
+  var ICONS = {
+    home: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/>',
+    wave: '<path d="M2 15c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 19c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M17 7a3 3 0 1 0-6 0"/><path d="M14 7v4"/>',
+    ship: '<path d="M3 17.5 4.5 12h15L21 17.5"/><path d="M6 12V7h12v5"/><path d="M12 3v4"/><path d="M2 20c1.5 0 2-1 3.5-1s2 1 3.5 1 2-1 3.5-1 2 1 3.5 1 2-1 3-1"/>',
+    city: '<path d="M3 21h18"/><path d="M5 21V8l6-4v17"/><path d="M11 21V11h8v10"/><path d="M8 11h.01M8 14h.01M8 17h.01M15 15h.01M15 18h.01"/>',
+    plane:'<path d="M17.8 19.8 16 14l-4 4v3l-2-2-2 2v-3l-4-4-1.8 5.8"/><path d="M2 10.5 12 3l10 7.5-10 4.5-10-4.5Z"/>',
+    house:'<path d="M4 11 12 5l8 6"/><path d="M6 10.5V20h12v-9.5"/><path d="M10 20v-5h4v5"/><path d="M2 12l10-8 10 8"/>',
+    mount:'<path d="M8 4l4 7 2-3 6 12H2z"/>'
+  };
+  function ic(name, cls) {
+    return '<svg ' + (cls ? 'class="' + cls + '" ' : '') + 'viewBox="0 0 24 24" fill="none" ' +
+      'stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" ' +
+      'aria-hidden="true">' + (ICONS[name] || '') + '</svg>';
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (m) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m];
+    });
+  }
+
+  /* ═══════════════ diagram SVG ═══════════════ */
+  var W = 1000, H = 680, CX = 470, CY = 336, R1 = 152, R2 = 250;
+
+  function pos(deg, r) {
+    var a = (deg - 90) * Math.PI / 180;
+    return { x: CX + r * Math.cos(a), y: CY + r * Math.sin(a) };
+  }
+
+  function buildSvg() {
+    var s = '<svg class="dn__svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" ' +
+      'aria-label="Denah kasar: Casa Cali di tengah, delapan tempat penting di sekelilingnya ' +
+      'sesuai arah mata angin sebenarnya.">';
+
+    // laut di sisi timur
+    s += '<path class="dn-sea" d="M916 0 H' + W + ' V' + H + ' H916 C 946 ' + (H * .72) +
+         ', 946 ' + (H * .28) + ', 916 0 Z"/>';
+    s += '<text class="dn-sea-t" x="962" y="' + (H / 2) + '" text-anchor="middle" ' +
+         'transform="rotate(90 962 ' + (H / 2) + ')">Selat Bali &#8594; Bali</text>';
+
+    // cincin jarak
+    s += '<circle class="dn-ring" cx="' + CX + '" cy="' + CY + '" r="' + R1 + '"/>';
+    s += '<circle class="dn-ring" cx="' + CX + '" cy="' + CY + '" r="' + R2 + '"/>';
+    s += '<text class="dn-ring-t" x="' + CX + '" y="' + (CY - R1 + 17) + '" text-anchor="middle">sekitar 5 km</text>';
+    s += '<text class="dn-ring-t" x="' + CX + '" y="' + (CY - R2 + 17) + '" text-anchor="middle">7–18 km</text>';
+
+    // kompas
+    s += '<g transform="translate(58,58)">' +
+           '<path class="dn-comp-n" d="M0 22 L0 -18 M-7 -9 L0 -18 L7 -9"/>' +
+           '<text class="dn-comp" x="0" y="38" text-anchor="middle">UTARA</text>' +
+         '</g>';
+
+    // garis penghubung
+    NODES.forEach(function (n) {
+      var p = pos(n.deg, n.ring === 1 ? R1 : R2);
+      s += '<line class="dn-spoke" x1="' + CX + '" y1="' + CY +
+           '" x2="' + p.x.toFixed(1) + '" y2="' + p.y.toFixed(1) + '"/>';
+    });
+
+    // rumah di tengah — satu-satunya tautan
+    s += '<a class="dn-home" href="' + esc(HOME_URL) + '" target="_blank" rel="noopener" ' +
+           'aria-label="Casa Cali, kamu di sini. Buka lokasinya di Google Maps.">' +
+         '<title>Buka Casa Cali di Google Maps</title>' +
+         '<circle class="dn-home-hit" cx="' + CX + '" cy="' + CY + '" r="94"/>' +
+         '<circle class="dn-home-ring" cx="' + CX + '" cy="' + CY + '" r="74"/>' +
+         '<circle class="dn-home-ring" cx="' + CX + '" cy="' + CY + '" r="86"/>' +
+         '<circle class="dn-home-r" cx="' + CX + '" cy="' + CY + '" r="63"/>' +
+         '<g class="dn-home-i" transform="translate(' + (CX - 12) + ',' + (CY - 36) + ')">' +
+           ICONS.home + '</g>' +
+         '<text class="dn-home-t" x="' + CX + '" y="' + (CY + 9) + '">CASA CALI</text>' +
+         '<text class="dn-home-s" x="' + CX + '" y="' + (CY + 27) + '">KAMU DI SINI</text>' +
+         '<text class="dn-home-cue" x="' + CX + '" y="' + (CY + 84) + '">BUKA DI GOOGLE MAPS</text>' +
+         '</a>';
+
+    // simpul
+    NODES.forEach(function (n) {
+      var p = pos(n.deg, n.ring === 1 ? R1 : R2);
+      var right = n.side === 'r';
+      var lx = p.x + (right ? 34 : -34);
+      var anc = right ? 'start' : 'end';
+      s += '<g class="dn-node">' +
+           '<title>' + esc(n.n + ' · ' + n.km + ' km · ' + n.t + ' berkendara') + '</title>' +
+           '<circle class="b" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="21"/>' +
+           '<g class="ic" transform="translate(' + (p.x - 11).toFixed(1) + ',' +
+             (p.y - 11).toFixed(1) + ') scale(.92)">' + ICONS[n.ic] + '</g>' +
+           '<text class="nm" x="' + lx.toFixed(1) + '" y="' + (p.y - 5).toFixed(1) +
+             '" text-anchor="' + anc + '">' + esc(n.n) + '</text>' +
+           '<text class="sb" x="' + lx.toFixed(1) + '" y="' + (p.y + 12).toFixed(1) +
+             '" text-anchor="' + anc + '">' + esc(n.s) + '</text>' +
+           '<text class="tm" x="' + lx.toFixed(1) + '" y="' + (p.y + 29).toFixed(1) +
+             '" text-anchor="' + anc + '">' + esc(n.t) + ' berkendara</text>' +
+           '</g>';
+    });
+
+    return s + '</svg>';
+  }
+
+  /* ═══════════════ versi HP ═══════════════ */
+  function inDir(deg, d) {
+    return d.lo > d.hi ? (deg >= d.lo || deg < d.hi) : (deg >= d.lo && deg < d.hi);
+  }
+  function buildMob() {
+    // hanya kartu Casa Cali yang jadi tautan; sisanya teks biasa
+    var h = '<a class="dn__you" href="' + esc(HOME_URL) + '" target="_blank" rel="noopener">' +
+            ic('home') + '<span><b>CASA CALI</b>' +
+            '<span>Kamu di sini — buka di Google Maps</span></span></a>';
+    DIRS.forEach(function (d) {
+      var g = NODES.filter(function (n) { return inDir(n.deg, d); })
+                   .sort(function (a, b) { return a.km - b.km; });
+      if (!g.length) return;
+      h += '<div class="dn__grp"><h3>' + esc(d.k) + '</h3>';
+      g.forEach(function (n) {
+        h += '<div class="dn__card">' +
+               '<span class="dn__ic">' + ic(n.ic) + '</span>' +
+               '<span><span class="dn__nm">' + esc(n.n) + '</span>' +
+                 '<span class="dn__sb">' + esc(n.s) + ' · ' + n.km + ' km</span></span>' +
+               '<span class="dn__tm">' + esc(n.t) + '<small>berkendara</small></span></div>';
+      });
+      h += '</div>';
+    });
+    return h;
+  }
+
+  /* ═══════════════ pasang ═══════════════ */
+  function init() {
+    var frame = document.getElementById('dnFrame');
+    var mob   = document.getElementById('dnMob');
+    var far   = document.getElementById('dnFar');
+    var cta   = document.getElementById('dnCta');
+    if (!frame) return;
+
+    frame.innerHTML = buildSvg();
+    frame.removeAttribute('aria-hidden');   // isinya sudah punya label sendiri
+    mob.innerHTML = buildMob();
+    cta.href = HOME_URL;
+
+    far.innerHTML = FAR.map(function (f) {
+      return '<span class="dn__chip">' + esc(f.n) + ' <em>' + f.km + ' km</em></span>';
+    }).join('');
+  }
+
+  if (document.readyState === 'loading') window.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
+
 $('#guide').innerHTML=GUIDE.map(g=>`<article class="gcard" data-g="${g[0]}">
   <div class="im" style="background-image:url('${IM(g[0])}')"></div>
   <div class="gc"><b>${g[1]}</b><span>${g[2]}</span></div></article>`).join('');
